@@ -1,0 +1,6 @@
+Other ways to create Components:
+  see bit.ly/react-define-component
+
+Cory House - React-redux-app
+
+https://github.com/coryhouse/react-redux-app/tree/master/src

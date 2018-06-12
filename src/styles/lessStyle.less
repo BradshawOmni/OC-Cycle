@@ -1,0 +1,143 @@
+//NextCare Style Colors//
+@nc-blue: #007bff;
+@nc-green: #00ff84;
+@nc-pink: #ff007b;
+@nc-orange: #ff8400;
+
+//Interface Colors//
+@nc-lightgrey: #efefef;
+@nc-medgrey: #BDEDFF;
+@nc-white:#fdfdfd;
+
+
+
+///Header
+.pageHeaders{
+  display:flex;
+  width:100%;
+  margin-bottom:20px;
+  border-bottom:1px dotted @nc-medgrey;
+}
+.pageHeaders h2{
+  color:@nc-blue;
+}
+
+////Side Nav
+.sidebarClosed {
+   margin-left:-200px;
+}
+.sidebar
+{
+  background-color:@nc-white !important;
+  border-right:1px solid @nc-blue;
+  -webkit-transition: all .3s; /* Safari */
+  transition: all .3s;
+}
+.sidebar-nav
+{
+  margin-top:30px;
+  overflow-y:hidden !important;
+  background-color:@nc-white !important;
+}
+.nav-item a
+{
+  background-color:@nc-white;
+  border-bottom:1px solid @nc-blue;
+  color:@nc-blue !important;
+  -webkit-transition: all .3s; /* Safari */
+  transition: all .3s;
+}
+.nav-item a:hover
+{
+  background-color:@nc-blue !important;
+  color:@nc-white !important;
+}
+//////////////////////////////////////////Page Items
+//Home Page
+.blueBox
+{
+  background-color:@nc-blue !important;
+}
+.greenBox
+{
+  background-color:@nc-green !important;
+}
+.pinkBox
+{
+  background-color:@nc-pink !important;
+}
+.orangeBox
+{
+  background-color:@nc-orange !important;
+}
+@nc-blue: #007bff;
+@nc-green: #00ff84;
+@nc-pink: #ff007b;
+@nc-orange: #ff8400;
+
+
+.nextcareBtn
+{
+  background-color: @nc-blue !important;
+  color:#fff !important;
+  -webkit-transition: all .3s; /* Safari */
+  transition: all .3s;
+}
+.nextcareBtn:hover
+{
+  background-color: @nc-medgrey !important;
+  color: @nc-blue !important;
+}
+
+.list-group-item:nth-child(even) {
+  background-color: @nc-medgrey;
+  border:1px solid @nc-medgrey;
+}
+.list-group-item:nth-child(odd) {
+  background-color: nc-lightgrey;
+  border:1px solid @nc-medgrey;
+} 
+
+
+
+
+///Invoice Items//
+.total-line {
+  font-weight: bold;
+  background-color:@nc-medgrey;
+  color:@nc-blue !important;
+}
+.item-detail
+{
+  
+}
+.row-detail {
+
+  border-bottom:1px solid @nc-blue;
+ 
+  /* background-color: #CCC; */
+}
+.invoiceTitle
+{
+  margin-bottom:40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+//Charts
+.chart-wrapper
+{
+  max-height:70px !important;
+}
+.chart
+{
+  max-height:70px !important;
+}

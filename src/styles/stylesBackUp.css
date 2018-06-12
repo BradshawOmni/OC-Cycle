@@ -1,0 +1,121 @@
+/* Styles 
+a {
+  text-decoration:none !important;
+  color:#333333  !important;
+  transition:  all .3s !important;
+}
+
+a:hover {
+  text-decoration:none !important;
+  color:#1375e6 !important;
+  background-color: rgb(194, 243, 196) !important;
+  transition:  all .3s !important;
+}
+
+#app {
+  font: 'Helvetica Neue', Helvetica, Arial, san-serif;
+  color: #4d4d4d;
+  /* min-width: 550px; */
+  /*max-width: 1024px;*/
+  margin: 0 auto;
+  background-color: rgb(207, 211, 216);
+  /* top right bottom left */
+  padding: 10px 50px 40px 50px;
+}
+
+a.active {
+  color: orange;
+}
+
+nav {
+  padding-top: 20px;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.no-bullets {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* .app-body {
+  margin-left: 200px;
+} */
+
+.vertical-menu {
+  /* width: 200px; */
+  height: 100%;
+}
+
+.vertical-menu a {
+  font-size: 20px;
+  font-weight: bolder;
+  background-color: #eee; /* Grey background color */
+  color: black; /* Black text color */
+  display: block; /* Make the links appear below each other */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc; /* Dark grey background on mouse-over */
+}
+
+.vertical-menu a.active {
+  background-color: #4CAF50; /* Add a green color to the "active/current" link */
+  color: white;
+}
+
+.banner-container {
+  border: 2px solid green;
+}
+
+.banner {
+  text-align: center !important;
+  margin: 1%;
+  vertical-align: middle !important;
+  line-height: 90px;
+  font-size: 35px;
+  font-weight: bolder;
+  color: #1375e6;
+}
+
+.date-text-box {
+  border-radius: 7px;
+  text-align: center;
+}
+
+.row-title {
+  text-align: left;
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.item-detail {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: large;
+}
+
+.row-detail {
+  border-style: solid;
+  border-color: black;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-top-width: 0px;
+  border-bottom-width: 1px;
+  /* background-color: #CCC; */
+}
+
+a.row:nth-child(even){
+  background-color: #d1f2ff;
+}
+
+a.row:nth-child(odd){
+  background-color: #a1e1f5;
+}
+
+.row {
+  min-height: 30px;
+}

@@ -4,6 +4,7 @@ import { Link, IndexLink } from 'react-router';
 
 class Aside extends PureComponent {
   render() {
+    console.log(this.props);
     const loading = this.props.loading;
     return (
       <aside className="aside-menu">

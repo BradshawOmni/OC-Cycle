@@ -5,39 +5,52 @@ import delay from './delay';
 // All calls return promises.
 const invoices = [
   {
-    invoiceId: 1357,
-    title: 'Judson Invoice 5/12/2016',
-    lineItems: [
-      {itemId: 1, item: 'Month of Care', quantity: 4, costPer: 12.88},
-      {itemId: 2, item: 'Snacks', quantity: 30, costPer: 1.50},
-      {itemId: 3, item: 'Fun Time', quantity: 1, costPer: 100.67}
+    invoiceId: 13,
+    invoiceTypeId: 2,
+    invoiceNumber: 'TSX7611',
+    invoiceOwnerId: 10,
+    description: 'Judson Invoice 5/12/2016',
+    paid: true,
+    invoiceLine: [
+      {invoiceLineId: 1, description: 'Month of Care', quantity: 4, cost: 12.88, paid: true},
+      {invoiceLineId: 2, description: 'Snacks', quantity: 30, cost: 1.50, paid: true},
+      {invoiceLineId: 3, description: 'Fun Time', quantity: 1, cost: 100.67, paid: true}
     ]
   },
   {
-    invoiceId: 4567,
-    title: 'Bradshaw Invoice 4/12/2015',
-    lineItems: [
-      {itemId: 1, item: 'Month of Care', quantity: 6, costPer: 12.88},
-      {itemId: 2, item: 'Clothes', quantity: 10, costPer: 11.50},
-      {itemId: 3, item: 'Transportation', quantity: 2, costPer: 32.95}
+    invoiceId: 14,
+    invoiceTypeId: 2,
+    invoiceNumber: 'NPR1635',
+    invoiceOwnerId: 8,
+    description: 'Bradshaw Invoice 4/12/2015',
+    invoiceLine: [
+      {invoiceLineId: 1, description: 'Month of Care', quantity: 6, cost: 12.88, paid: true},
+      {invoiceLineId: 2, description: 'Clothes', quantity: 10, cost: 11.50, paid: true},
+      {invoiceLineId: 3, description: 'Transportation', quantity: 2, cost: 32.95, paid: true}
     ]
   },
   {
-    invoiceId: 2345,
-    title: 'Baker Invoice 3/15/2016',
-    lineItems: [
-      {itemId: 1, item: 'Month of Care', quantity: 2, costPer: 12.88},
-      {itemId: 2, item: 'Wait time', quantity: 10, costPer: 20.55},
-      {itemId: 3, item: 'Transportation', quantity: 1, costPer: 32.95}
+    invoiceId: 6,
+    invoiceTypeId: 1,
+    invoiceNumber: 'NHTY72958',
+    invoiceOwnerId: 8,
+    description: 'Baker Invoice 3/15/2016',
+    invoiceLine: [
+      {invoiceLineId: 1, description: 'Month of Care', quantity: 2, cost: 12.88, paid: true},
+      {invoiceLineId: 2, description: 'Wait time', quantity: 10, cost: 20.55, paid: true},
+      {invoiceLineId: 3, description: 'Transportation', quantity: 1, cost: 32.95, paid: true}
     ]
   },
   {
-    invoiceId: 1234,
-    title: 'Jones Invoice 7/31/2017',
-    lineItems: [
-      {itemId: 1, item: 'Month of Care', quantity: 2, costPer: 12.88},
-      {itemId: 2, item: 'Snacks', quantity: 25, costPer: 1.50},
-      {itemId: 3, item: 'Wait time', quantity: 4, costPer: 20.55}
+    invoiceId: 3,
+    invoiceTypeId: 1,
+    invoiceNumber: '4117658',
+    invoiceOwnerId: 8,
+    description: 'Jones Invoice 7/31/2017',
+    invoiceLine: [
+      {invoiceLineId: 1, description: 'Month of Care', quantity: 2, cost: 12.88, paid: true},
+      {invoiceLineId: 2, description: 'Snacks', quantity: 25, cost: 1.50, paid: true},
+      {invoiceLineId: 3, description: 'Wait time', quantity: 4, cost: 20.55, paid: true}
     ]
   }
 ];

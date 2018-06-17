@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 class InvoiceItemListRow extends Component {
   render() {
     const line = this.props.line;
-    const total = line.costPer * line.quantity;
+    const total = line.cost * line.quantity;
     const lineDetail = line.total ? (
       <div className="row row-detail total-line">
         <div className="col-lg-2 item-detail">{line.item}</div>
@@ -14,9 +14,9 @@ class InvoiceItemListRow extends Component {
       </div>
     ) : (
         <div className="row row-detail">
-          <div className="col-lg-2 item-detail">{line.item}</div>
+          <div className="col-lg-2 item-detail">{line.description}</div>
           <div className="col-sm-2 item-detail">{line.quantity}</div>
-          <div className="col-sm-2 item-detail number-detail">{line.costPer.toFixed(2)}</div>
+          <div className="col-sm-2 item-detail number-detail">{line.cost.toFixed(2)}</div>
           <div className="col-sm-2 item-detail number-detail">{total.toFixed(2)}</div>
         </div>
       );

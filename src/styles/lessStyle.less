@@ -1,15 +1,22 @@
 //NextCare Style Colors//
-@nc-purp: #662C90;
-
+@nc-blue: #7AABC6;
+@nc-lightBlue: #B8CBD6;
+@nc-yellow: #FFFF0D;
+@nc-orange: #E88D0C;
 
 //Interface Colors//
 @nc-lightgrey: #efefef;
 @nc-medgrey: #BDEDFF;
 @nc-white:#fdfdfd;
 
-
+//Interface Icons
+.fa-bars
+{
+  color:@nc-blue;
+}
 
 ///Header
+
 .pageHeaders{
   display:flex;
   width:100%;
@@ -17,72 +24,131 @@
   border-bottom:1px dotted @nc-medgrey;
 }
 .pageHeaders h2{
-  color:@nc-purp;
+  color:@nc-blue;
 }
-.navbar-brand
+//App Sections (Header, Nav, Main Aside)
+.app-header
 {
-  color:@nc-purp;
-  font-size:20px !important;
+  position:relative !important;
 }
-.navbar-brand:hover
+.app-body
 {
-  color:@nc-purp;
-  font-size:20px !important;
+  margin-top:0px !important;
 }
+.main
+{
+  margin-top:40px;
+}
+.sidebar-minimizer
+{
+  bottom:30vh !important;
+}
+.sidebar-minimizer::before
+{
+  top:30vh;
+  right:20vw;
+}
+
 ////Side Nav
-.sidebarClosed {
-   margin-left:-200px;
+.toggleNavButton
+{
+  position:relative;
+  text-align:right;
+}
+.navMinToggle
+{
+  width:100%;
+  background-color:@nc-lightBlue;
+  border:1px solid @nc-blue;
+  color:@nc-white !important;
+  -webkit-transition: all .3s; /* Safari */
+  transition: all .3s;
 }
 .sidebar
 {
   background-color:@nc-white !important;
-  border-right:1px solid @nc-purp;
+  border-right:1px solid @nc-blue;
   -webkit-transition: all .3s; /* Safari */
   transition: all .3s;
 }
 .sidebar-nav
 {
-  margin-top:30px;
   overflow-y:hidden !important;
   background-color:@nc-white !important;
+}
+.sidebar .nav-link
+{
+  display: block;
+  padding: .75rem 1rem;
+  color: #fff;
+  text-decoration: none;
+  background: 0 0;
 }
 .nav-item a
 {
   background-color:@nc-white;
-  border-bottom:1px solid @nc-purp;
-  color:@nc-purp !important;
+  border-bottom:1px solid @nc-blue;
+  color:@nc-blue !important;
   -webkit-transition: all .3s; /* Safari */
   transition: all .3s;
 }
 .nav-item a:hover
 {
-  background-color:@nc-purp !important;
+  background-color:@nc-blue !important;
   color:@nc-white !important;
 }
+.openNavText
+{
+  
+  -webkit-transition: all .3s; /* Safari */
+  transition: all .3s;
+}
+.collapseNavText .navSpan
+{
+  font-size:0px !important;
+
+}
+.collapseNavText .navSpan 
+{
+  display:none;
+  visibility:collapse;
+
+}
+.collapseNavText .fa { 
+  font-size: 30px; 
+}
+.navIconOnly .navIcon
+{
+  margin-right:auto !important;
+  margin-left:auto !important;
+  text-align:center !important;
+}
+  
+
 //////////////////////////////////////////Page Items
 //Home Page
 .blueBox
 {
-  background-color:@nc-purp !important;
+  background-color:@nc-blue !important;
 }
 .greenBox
 {
-  background-color:@nc-purp !important;
+  background-color:@nc-lightBlue !important;
 }
 .pinkBox
 {
-  background-color:@nc-purp !important;
+  background-color:@nc-yellow !important;
 }
 .orangeBox
 {
-  background-color:@nc-purp !important;
+  background-color:@nc-orange !important;
 }
 
 
 
 .nextcareBtn
 {
-  background-color: @nc-purp !important;
+  background-color: @nc-blue !important;
   color:#fff !important;
   -webkit-transition: all .3s; /* Safari */
   transition: all .3s;
@@ -90,7 +156,7 @@
 .nextcareBtn:hover
 {
   background-color: @nc-medgrey !important;
-  color: @nc-purp !important;
+  color: @nc-blue !important;
 }
 
 .list-group-item:nth-child(even) {
@@ -102,23 +168,18 @@
   border:1px solid @nc-medgrey;
 } 
 
-
-
-
 ///Invoice Items//
 .total-line {
   font-weight: bold;
   background-color:@nc-medgrey;
-  color:@nc-purp !important;
+  color:@nc-blue !important;
 }
 .item-detail
 {
   
 }
 .row-detail {
-
-  border-bottom:1px solid @nc-purp;
- 
+  border-bottom:1px solid @nc-blue; 
   /* background-color: #CCC; */
 }
 .invoiceTitle

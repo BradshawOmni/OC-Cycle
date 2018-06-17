@@ -3,26 +3,18 @@ body
  background-color:#ffffff !important;
 }
 
-#app
-{
-    margin-right:30px;
-}
+
 .main
 {
     width:100% !important;
-    margin-top:80px;
-    margin-left:220px !important;
+   
+    
 }
 .sidebar
 {
   overflow:hidden !important;
 }
-.sidebar-nav
-{
-  padding-left:10px;
-  font-size: medium;
-  font-weight: bold;
-}
+
 div{
     white-space: nowrap;
 }

@@ -24,7 +24,7 @@ class InvoicePage extends React.Component {
   }
 
   render() {
-    const {invoices} = this.props;
+    const {invoices} = this.props; // fas fa-plus-square
     return (
       <div className="container-fluid">
         <div className="row">
@@ -41,14 +41,6 @@ class InvoicePage extends React.Component {
               />
               </div>
           </div>
-            <div className="tableHeader">
-                <div className="col-sm-2">
-                    Customer ID
-                </div>
-                <div className="col-md-10">
-                    Customer Name
-                </div>
-            </div>
             <InvoiceList invoices={invoices} />
         </div>
       </div>

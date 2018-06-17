@@ -11,7 +11,7 @@ class InvoiceListRow extends Component {
       <Link className="list-group-item list-group-item-action flex-column align-items-start" to={'/invoice/' + invoice.invoiceId}>
         <div className="row">
           <div className="col-sm-2">{invoice.invoiceId}</div>
-          <div className="col-md-10">{invoice.title}</div>
+          <div className="col-md-10">{invoice.description}</div>
         </div>
       </Link>
     );

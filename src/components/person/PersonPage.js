@@ -20,16 +20,24 @@ class PersonsPage extends React.Component {
   render() {
     const { persons } = this.props;
     return (
-      <div>
-        <h1>Persons</h1>
-        <input
-          type="submit"
-          value="Add Person"
-          className="btn btn-secondary"
-          onClick={this.redirectToAddPersonPage}
-        />
-        <PersonList persons={persons} />
-      </div>
+      <div className="container-fluid">
+        <div className="row">
+          <div className = "pageHeaders">
+              <div className="col-md-4">
+                  <h2>Person List</h2>
+              </div>
+              <div className="col-md-8 text-right">
+              <input
+                type="submit"
+                value="Add Person"
+                className="btn nextcareBtn"
+                onClick={this.redirectToAddPersonPage}
+              />
+              </div>
+          </div>
+          <PersonList persons={persons} />
+        </div>
+    </div>
     );
   }
 }

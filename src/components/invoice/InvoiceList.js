@@ -8,6 +8,14 @@ class InvoiceList extends Component {
     const invoices = this.props.invoices;
     return (
       <div className="col-md-12">
+        <div className="tableHeader">
+          <div className="col-sm-2">
+            Customer ID
+          </div>
+          <div className="col-md-10">
+            Customer Name
+          </div>
+        </div>
         <div className="list-group">
           {invoices.map(invoice =>
             <InvoiceListRow key={invoice.invoiceId}

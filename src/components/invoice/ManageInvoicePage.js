@@ -112,9 +112,12 @@ function mapStateToProps(state, ownProps) {
 
   let invoice = {
     invoiceId: 0,
-    title: '',
-    lineItems: [
-      {item: '', quantity: 0, costPer: 0.00}
+    invoiceTypeId: 0,
+    invoiceNumber: '',
+    paid: false,
+    description: '',
+    invoiceLine: [
+      {invoiceLineId: 0, description: '', quantity: 0, cost: 0.00, paid: false}
     ]
   };
 

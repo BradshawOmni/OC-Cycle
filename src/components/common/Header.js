@@ -2,20 +2,20 @@ import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import { Link, IndexLink } from 'react-router';
 import LoadingDots from './LoadingDots';
-import HeaderActions from './HeaderActions';
+import ToggleAsideButton from './ToggleAsideButton';
+import ToggleNavButton from './ToggleNavButton';
+
 class Header extends PureComponent {
   render() {
     const loading = this.props.loading;
+
     return (
       <header className="app-header navbar">
         <button className="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
           <span className="navbar-toggler-icon"></span>
         </button>
-        
-        <a className="navbar-brand" href="/">OMNICOMM</a>
-        <button className="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show" onClick={this.props.myFunc}>
-          <span className="navbar-toggler-icon"></span>
-        </button>
+        <a className="navbar-brand" href="/">NextCare</a>
+        <ToggleNavButton  />
       
         <ul className="nav navbar-nav ml-auto">
           <li className="nav-item d-md-down-none">
@@ -81,9 +81,7 @@ class Header extends PureComponent {
             </div>
           </li>
         </ul>
-        <button className="navbar-toggler aside-menu-toggler d-md-down-none" type="button" data-toggle="aside-menu-lg-show">
-          <span className="navbar-toggler-icon"></span>
-        </button>
+        <ToggleAsideButton  />
         <button className="navbar-toggler aside-menu-toggler d-lg-none" type="button" data-toggle="aside-menu-show">
           <span className="navbar-toggler-icon"></span>
         </button>

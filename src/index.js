@@ -12,7 +12,8 @@ import {loadAccounts} from './actions/accountActions';
 import {loadInvoices} from './actions/invoiceActions';
 import { loadStates } from './actions/stateActions';
 import { loadAddresses } from './actions/addressActions';
-import { loadAddressTypes } from './actions/addressTypeActions';
+import {loadAddressTypes} from './actions/addressTypeActions';
+import {loadPersons} from './actions/personActions';
 import './styles/styles.css'; // webpack can import CSS files too!
 import './styles/lessStyle.less';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
@@ -28,6 +29,7 @@ store.dispatch(loadInvoices());
 store.dispatch(loadAddresses());
 store.dispatch(loadAddressTypes());
 store.dispatch(loadStates());
+store.dispatch(loadPersons());
 
 
 /* jshint ignore:start */

@@ -7,6 +7,8 @@ import ManageAccountPage from './components/account/ManageAccountPage';
 import AccountPage from './components/account/AccountPage';
 import ManageInvoicePage from './components/invoice/ManageInvoicePage';
 import InvoicePage from './components/invoice/InvoicePage';
+import PersonPage from './components/person/PersonPage';
+import ManagePersonPage from './components/person/ManagePersonPage';
 
 export default (
   <Route path="/" component={App}>
@@ -17,6 +19,9 @@ export default (
     <Route path="invoices" component={InvoicePage} />
     <Route path="invoice" component={ManageInvoicePage} />
     <Route path="invoice/:id" component={ManageInvoicePage} />
+    <Route path="persons" component={PersonPage} />
+    <Route path="person" component={ManagePersonPage} />
+    <Route path="person/:id" component={ManagePersonPage} />
     <Route path="about" component={AboutPage} />
   </Route>
 );

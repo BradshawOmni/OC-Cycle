@@ -2,7 +2,7 @@ import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import { Link, IndexLink } from 'react-router';
 import LoadingDots from './LoadingDots';
-
+import HeaderActions from './HeaderActions';
 class Header extends PureComponent {
   render() {
     const loading = this.props.loading;
@@ -11,8 +11,9 @@ class Header extends PureComponent {
         <button className="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
           <span className="navbar-toggler-icon"></span>
         </button>
-        <a className="navbar-brand" href="/">NextCare</a>
-        <button className="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
+        
+        <a className="navbar-brand" href="/">OMNICOMM</a>
+        <button className="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show" onClick={this.props.myFunc}>
           <span className="navbar-toggler-icon"></span>
         </button>
       

@@ -41,6 +41,16 @@ const action = keyMirror({
   CREATE_STUDENT_FAILED: null,
   UPDATE_STUDENT_FAILED: null,
 
+  // student actions
+  LOAD_PERSONS_SUCCESS: null,
+  LOAD_PERSONS_FAILED: null,
+  CREATE_PERSON_SUCCESS: null,
+  UPDATE_PERSON_SUCCESS: null,
+  CREATE_PERSON_FAILED: null,
+  UPDATE_PERSON_FAILED: null,
+  DELETE_PERSON_SUCCESS: null,
+  DELETE_PERSON_FAILED: null,
+
   // account actions
   LOAD_ACCOUNTS_SUCCESS: null,
   LOAD_ACCOUNTS_FAILED: null,

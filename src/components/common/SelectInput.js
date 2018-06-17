@@ -9,6 +9,8 @@ class SelectInput extends PureComponent {
       inputClass += " " + `${addClass}`;
     }
 
+    const addDefaultOption = defaultOption ? (<option disabled>{defaultOption}</option>) : '';
+
     return (
       <div className="form-group">
         <label htmlFor={name}>{label}</label>
@@ -20,7 +22,7 @@ class SelectInput extends PureComponent {
             value={value}
             onChange={onChange}
             className={inputClass}>
-            <option>{defaultOption}</option>
+            {addDefaultOption}
             {options.map((option) => {
               return (
                 <option key={option.value} value={option.value}>{option.text}</option>

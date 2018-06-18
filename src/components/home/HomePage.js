@@ -21,7 +21,7 @@ class HomePage extends React.Component {
                     </div>
                   </div>
                   <div className="text-value">9.823</div>
-                  <div>Members online</div>
+                  <div>Sold</div>
                 </div>
                 <div className="chart-wrapper mt-3 mx-3" >
                   <canvas id="card-chart1" className="chart" ></canvas>
@@ -35,7 +35,7 @@ class HomePage extends React.Component {
                     <i className="icon-location-pin"></i>
                   </button>
                   <div className="text-value">9.823</div>
-                  <div>Members online</div>
+                  <div>Invoiced</div>
                 </div>
                 <div className="chart-wrapper mt-3 mx-3" >
                   <canvas id="card-chart2" className="chart" ></canvas>
@@ -56,7 +56,7 @@ class HomePage extends React.Component {
                     </div>
                   </div>
                   <div className="text-value">9.823</div>
-                  <div>Members online</div>
+                  <div>In Production</div>
                 </div>
                 <div className="chart-wrapper mt-3" >
                   <canvas id="card-chart3" className="chart" ></canvas>
@@ -77,7 +77,7 @@ class HomePage extends React.Component {
                     </div>
                   </div>
                   <div className="text-value">9.823</div>
-                  <div>Members online</div>
+                  <div>Live</div>
                 </div>
                 <div className="chart-wrapper mt-3 mx-3" >
                   <canvas id="card-chart4" className="chart" ></canvas>

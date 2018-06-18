@@ -1,8 +1,8 @@
 //NextCare Style Colors//
-@nc-blue: #7AABC6;
+@nc-purp: #662C90;
 @nc-lightBlue: #B8CBD6;
-@nc-yellow: #FFFF0D;
-@nc-orange: #E88D0C;
+@nc-yellow: #FF8A0D;
+@nc-orange: #E8450C;
 
 //Interface Colors//
 @nc-lightgrey: #efefef;
@@ -12,7 +12,7 @@
 //Interface Icons
 .fa-bars
 {
-  color:@nc-blue;
+  color:@nc-purp;
 }
 
 ///Header
@@ -24,7 +24,17 @@
   border-bottom:1px dotted @nc-medgrey;
 }
 .pageHeaders h2{
-  color:@nc-blue;
+  color:@nc-purp;
+}
+.navbar-brand
+{
+  color:@nc-purp;
+  -webkit-transition: all .3s; /* Safari */
+  transition: all .3s;
+}
+.navbar-brand:hover
+{
+  color:@nc-orange;
 }
 //App Sections (Header, Nav, Main Aside)
 .app-header
@@ -58,8 +68,8 @@
 .navMinToggle
 {
   width:100%;
-  background-color:@nc-lightBlue;
-  border:1px solid @nc-blue;
+  background-color:@nc-purp;
+  border:1px solid @nc-purp;
   color:@nc-white !important;
   -webkit-transition: all .3s; /* Safari */
   transition: all .3s;
@@ -67,7 +77,7 @@
 .sidebar
 {
   background-color:@nc-white !important;
-  border-right:1px solid @nc-blue;
+  border-right:1px solid @nc-purp;
   -webkit-transition: all .3s; /* Safari */
   transition: all .3s;
 }
@@ -87,14 +97,14 @@
 .nav-item a
 {
   background-color:@nc-white;
-  border-bottom:1px solid @nc-blue;
-  color:@nc-blue !important;
+  border-bottom:1px solid @nc-purp;
+  color:@nc-purp !important;
   -webkit-transition: all .3s; /* Safari */
   transition: all .3s;
 }
 .nav-item a:hover
 {
-  background-color:@nc-blue !important;
+  background-color:@nc-purp !important;
   color:@nc-white !important;
 }
 .openNavText
@@ -117,7 +127,7 @@
 .collapseNavText .fa { 
   font-size: 30px; 
 }
-.navIconOnly .navIcon
+.navIconOnly 
 {
   margin-right:auto !important;
   margin-left:auto !important;
@@ -129,7 +139,7 @@
 //Home Page
 .blueBox
 {
-  background-color:@nc-blue !important;
+  background-color:@nc-purp !important;
 }
 .greenBox
 {
@@ -148,7 +158,7 @@
 
 .nextcareBtn
 {
-  background-color: @nc-blue !important;
+  background-color: @nc-purp !important;
   color:#fff !important;
   -webkit-transition: all .3s; /* Safari */
   transition: all .3s;
@@ -156,7 +166,7 @@
 .nextcareBtn:hover
 {
   background-color: @nc-medgrey !important;
-  color: @nc-blue !important;
+  color: @nc-purp !important;
 }
 
 .list-group-item:nth-child(even) {
@@ -172,14 +182,14 @@
 .total-line {
   font-weight: bold;
   background-color:@nc-medgrey;
-  color:@nc-blue !important;
+  color:@nc-purp !important;
 }
 .item-detail
 {
   
 }
 .row-detail {
-  border-bottom:1px solid @nc-blue; 
+  border-bottom:1px solid @nc-purp; 
   /* background-color: #CCC; */
 }
 .invoiceTitle

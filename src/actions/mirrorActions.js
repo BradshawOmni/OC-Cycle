@@ -25,6 +25,19 @@ const action = keyMirror({
   DELETE_RANK_SUCCESS: null,
   DELETE_RANK_FAILED: null,
 
+
+  // Customer Actions //
+  LOAD_CUSTOMERS_SUCCESS: null,
+  LOAD_CUSTOMERS_FAILED: null,
+  CREATE_PERSON_SUCCESS: null,
+  UPDATE_CUSTOMER_SUCCESS: null,
+  CREATE_CUSTOMER_FAILED: null,
+  UPDATE_CUSTOMER_FAILED: null,
+  DELETE_CUSTOMER_SUCCESS: null,
+  DELETE_CUSTOMER_FAILED: null,
+
+
+
   // phone actions
   LOAD_PHONES_SUCCESS: null,
   LOAD_PHONES_FAILED: null,

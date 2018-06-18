@@ -34,6 +34,9 @@ class Navigation extends Component {
               <IndexLink to="/" className={this.state.textCollapse}><i className="fas fa-home fa-2x navIcon"></i> <span className = "navSpan">Home</span> </IndexLink>
             </li>
             <li className="nav-item">
+              <IndexLink to="/customers" className={this.state.textCollapse}><i className="fas fa-user fa-2x navIcon"></i> <span className = "navSpan">Customers</span> </IndexLink>
+            </li>
+            <li className="nav-item">
               <Link to="/accounts" className={this.state.textCollapse}><i className="far fa-address-card fa-2x navIcon"></i> <span className = "navSpan">Accounts</span></Link>
             </li>
             <li className="nav-item">
@@ -42,12 +45,8 @@ class Navigation extends Component {
             <li className="nav-item">
               <Link to="/persons" className={this.state.textCollapse}><i className="fas fa-user fa-2x navIcon"></i> <span className = "navSpan">Persons</span> </Link>
             </li>
-            <li className="nav-item">
-              <Link to="/about" className={this.state.textCollapse}><i className="fas fa-envelope-square fa-2x navIcon"></i> <span className = "navSpan">Messages</span> </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/about" className={this.state.textCollapse}><i className="fas fa-seedling fa-2x navIcon"></i> <span className = "navSpan">Room Feeds</span> </Link>
-            </li>
+          
+           
           </ul>
           {loading && <LoadingDots interval={100} dots={20} />}
         </nav>

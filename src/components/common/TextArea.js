@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 
-class TextInput extends PureComponent {
+class TextArea extends PureComponent {
   render() {
     const {name, label, addClass, onChange, placeholder, value, error, disabled} = this.props;
     let wrapperClass = 'form-group';
@@ -18,9 +18,8 @@ class TextInput extends PureComponent {
       <div className={wrapperClass}>
         <label htmlFor={name}>{label}</label>
         <div className="field">
-          <input
-            disabled={disabled}
-            type="text"
+          <textarea
+            type="textarea"
             name={name}
             className={inputClass}
             placeholder={placeholder}
@@ -32,7 +31,7 @@ class TextInput extends PureComponent {
     );
   }
 }
-TextInput.propTypes = {
+TextArea.propTypes = {
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   addClass: PropTypes.string,
@@ -43,4 +42,4 @@ TextInput.propTypes = {
   error: PropTypes.string
 };
 
-export default TextInput;
+export default TextArea;

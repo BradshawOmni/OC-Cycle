@@ -23,10 +23,9 @@ class CustomerPage extends React.Component {
   render() {
     
     const { customers } = this.props;
-
     return (
         
-      <div className="container-fluid">
+      <div className="container-fluid omniComp">
         <div className="row">
           <div className = "pageHeaders">
               <div className="col-md-4">

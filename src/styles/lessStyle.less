@@ -1,4 +1,4 @@
-//NextCare Style Colors//
+//OmniCommander Style Colors//
 @nc-purp: #662C90;
 @nc-lightBlue: #B8CBD6;
 @nc-yellow: #FF8A0D;
@@ -9,18 +9,21 @@
 @nc-medgrey: #BDEDFF;
 @nc-white:#fdfdfd;
 
+//Core Colors
+body{
+  background:#ccc;
+}
 //Interface Icons
 .fa-bars
 {
   color:@nc-purp;
 }
-
 ///Header
-
 .pageHeaders{
   display:flex;
   width:100%;
   margin-bottom:20px;
+  margin-top:20px;
   border-bottom:1px dotted @nc-medgrey;
 }
 .pageHeaders h2{
@@ -36,6 +39,7 @@
 {
   color:@nc-orange;
 }
+
 //App Sections (Header, Nav, Main Aside)
 .app-header
 {
@@ -47,7 +51,15 @@
 }
 .main
 {
-  margin-top:40px;
+  background-color:#efefef;
+  height:93vh;
+}
+.omniComp
+{
+  margin:20px !important;
+  border-radius:10px;
+  background-color:#ffffff;
+  
 }
 .sidebar-minimizer
 {
@@ -134,7 +146,12 @@
   text-align:center !important;
 }
   
-
+//Forms
+.form-group label
+{
+  color:@nc-purp;
+  font-weight:bold;
+}
 //////////////////////////////////////////Page Items
 //Home Page
 .blueBox
@@ -154,16 +171,14 @@
   background-color:@nc-orange !important;
 }
 
-
-
-.nextcareBtn
+.OmniCommanderBtn
 {
   background-color: @nc-purp !important;
   color:#fff !important;
   -webkit-transition: all .3s; /* Safari */
   transition: all .3s;
 }
-.nextcareBtn:hover
+.OmniCommanderBtn:hover
 {
   background-color: @nc-medgrey !important;
   color: @nc-purp !important;
@@ -199,14 +214,6 @@
 
 
 
-
-
-
-
-
-
-
-
 //Charts
 .chart-wrapper
 {
@@ -215,4 +222,15 @@
 .chart
 {
   max-height:70px !important;
+}
+
+//Date Picker
+.react-datepicker__header, .react-datepicker__day--selected
+{
+  background-color:@nc-purp !important;
+  
+} 
+.react-datepicker__current-month, .react-datepicker__day-name
+{
+  color:#ffffff !important;
 }

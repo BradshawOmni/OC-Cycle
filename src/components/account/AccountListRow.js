@@ -7,6 +7,7 @@ import CommonButton from '../common/CommonButton';
 class AccountListRow extends Component {
   render() {
     const account = this.props.account;
+    console.log(account);
     return (
       <Link className="list-group-item list-group-item-action flex-column align-items-start" to={'/account/' + account.accountId}>
         <div className="row">

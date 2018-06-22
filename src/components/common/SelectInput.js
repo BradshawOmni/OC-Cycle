@@ -17,7 +17,6 @@ class SelectInput extends PureComponent {
         <div className="field">
           {/* Note, value is set here rather than on the option - docs: https://facebook.github */}
           <select
-            disabled={disabled}
             name={name}
             value={value}
             onChange={onChange}

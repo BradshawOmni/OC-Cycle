@@ -16,7 +16,7 @@ export default (
   <Route path="/" component={App}>
     <IndexRoute component={HomePage} />
     <Route path="customers" component={CustomerPage} />
-    <Route path="customers/:id" component={ManageCustomerPage} />
+    <Route path="customer/:id" component={ManageCustomerPage} />
     <Route path="accounts" component={AccountPage} />
     <Route path="account" component={ManageAccountPage} />
     <Route path="account/:id" component={ManageAccountPage} />

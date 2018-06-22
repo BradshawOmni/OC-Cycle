@@ -3,37 +3,30 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as customerActions from '../../actions/customerActions';
-
 import CustomerForm from './CustomerForm';
 import toastr from 'toastr';
 import moment from 'moment';
 
 class ManageCustomerPage extends React.Component {
   constructor(props, context) {
+   
     super(props, context);
-
     this.state = {
       customer: Object.assign({}, this.props.customer),
       errors: {},
-      saving: false
+      saving: false,
+      deleting: false
     };
-
-  
     this.updateCustomerState = this.updateCustomerState.bind(this);
     this.saveCustomer = this.saveCustomer.bind(this);
-    
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(this.props.customer.customerId);
     if (this.props.customer.customerId != nextProps.customer.customerId) {
       // necessary to populate form whene existing person is loaded directly.
       this.setState({ customer: Object.assign({}, nextProps.customer) });
     }
   }
-
-
-
   updateCustomerState(event) {
     const field = event.target.name;
     let customer = this.state.customer;
@@ -45,13 +38,13 @@ class ManageCustomerPage extends React.Component {
     let formIsValid = true;
     let errors = {};
 
-    if (this.state.customer.lastName.length < 3) {
-      errors.lastName = 'Last name must be at least 3 characters.';
+    if (this.state.customer.cuName.length < 3) {
+      errors.cuName = 'Last name must be at least 3 characters.';
       formIsValid = false;
     }
 
-    if (this.state.customer.firstName.length < 3) {
-      errors.firstName = 'First name must be at least 3 characters.';
+    if (this.state.customer.contactName.length < 3) {
+      errors.contactName = 'First name must be at least 3 characters.';
       formIsValid = false;
     }
 
@@ -64,7 +57,6 @@ class ManageCustomerPage extends React.Component {
     if (!this.customerFormIsValid()) {
       return;
     }
-
     this.setState({ saving: true });
     this.props.actions.saveCustomer(this.state.customer)
       .then(() => this.redirect())
@@ -80,30 +72,23 @@ class ManageCustomerPage extends React.Component {
     this.context.router.push('/customer');
   }
 
-  handleDobDateChange(date) {
-    let customer = this.state.customer;
-    customer.dateOfBirth = date.format();
-    return this.setState({ customer: customer });
-  }
-
   render() {
+   
     return (
-      <CustomerForm
+     <CustomerForm
         onChange={this.updateCustomerState}
         onSave={this.saveCustomer}
         customer={this.state.customer}
         errors={this.state.errors}
         saving={this.state.saving}
-        sexes={this.props.sexes}
-        dobChange={this.handleDobDateChange}
+        beenServed={this.props.beenServed}
+        allStates={this.props.states}
       />
     );
   }
 }
-
 ManageCustomerPage.propTypes = {
   customer: PropTypes.object.isRequired,
-  sexes: PropTypes.array.isRequired,
   actions: PropTypes.object.isRequired
 };
 
@@ -113,7 +98,6 @@ ManageCustomerPage.contextTypes = {
 };
 
 function getCustomerById(customers, customerId) {
-  console.log(customerId);
   const customer = customers.filter(customer => customer.customerId == customerId);
   if (customer) return customer[0]; // since filter returns an array, have to grab the first.
   return null;
@@ -122,36 +106,24 @@ function getCustomerById(customers, customerId) {
 function mapStateToProps(state, ownProps) {
 
   const customerId = ownProps.params.id; // from the path '/customer/:id'
-console.log(customerId);
   let customer = {
     customerId: 0,
-    customerTypeId: 0,
-    alias: '',
-    dateOfBirth: '1900-01-01T00:00:00',
-    lastName: '',
-    firstName: '',
-    middleName: null,
-    socialSecurityNumber: '',
-    ssnSalt: '',
-    sex: '',
-    raceId: 0,
-    prefix: '',
-    suffix: ''
+    personTypeId: 0,
+    cuName: ''
+   
   };
-
-  if (customerId && state.customer.length > 0) {
-    customer = getCustomerById(state.customer, customerId);
-  }
-
-  const sexes = [
-    {value: 'M', text: 'Male'},
-    {value: 'F', text: 'Female'}
-  ];
-
+if (customerId && state.customers.length > 0) {
+   customer = getCustomerById(state.customers, customerId);
+}
+const beenServed = [
+  {value: 'true', text: 'True'},
+  {value: 'false', text: 'False'}
+];
   return {
-    customer: customer,
-    sexes: sexes
+    customer: customer,  
+    beenServed: beenServed  
   };
+
 }
 
 function mapDispatchToProps(dispatch) {

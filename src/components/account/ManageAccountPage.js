@@ -9,6 +9,7 @@ import toastr from 'toastr';
 class ManageAccountPage extends React.Component {
   constructor(props, context) {
     super(props, context);
+    console.log(this.props);
     this.state = {
       account: Object.assign({}, this.props.account),
       errors: {},

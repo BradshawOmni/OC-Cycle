@@ -18,7 +18,7 @@ const mongoose = require('mongoose');
     },
     role: {
         type: String,
-        default: "sales"
+        default: ""
     }
   });
 

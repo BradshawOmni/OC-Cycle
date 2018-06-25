@@ -1,0 +1,3 @@
+exports.session = {
+    secret: "omniCommanderSecret"
+};

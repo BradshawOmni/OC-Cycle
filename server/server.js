@@ -1,17 +1,23 @@
 const express = require('express');
 const app = express();
-const port =  3000;
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
 const mongoose = require('mongoose');
-const db = require('./config/config').db;
 const passport = require('passport');
 
-//load user model
+//imports
+const port =  3000;
+const db = require('./config/config').db;
+const sessionsSecret = require('./config/sessionConfig').secret;
 
+//load user model
 require('./models/User');
+
 //Passport config
 require('./config/passport')(passport);
+
 //Load Routes
 const auth = require('./routes/auth');
 const users = require('./routes/users');
@@ -36,14 +42,40 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
-app.use(bodyParser.json())
+app.use(bodyParser.json());
+
+//Middle wares needed for passport 
+app.use(cookieParser());
+
+app.use(session({ 
+    secret: 'sessionsSecret',
+    resave: false, 
+    saveUninitialized: false
+ }));
+  
+//passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Routes
-app.get('/', (req, res) => res.send('Hello World!'));
+app.get('/', (req, res) => res.send('Hello World!')); 
+
+app.get('/loginError', (req, res) => res.json({
+    success: false,
+    message:" login failed, try again and make sure email belong to Omnicommander"
+})); 
+
+app.get('/dashboard', (req, res) => {
+    res.send({
+      success: true,
+      message: "you are now logged in: here is your dashboard "
+    });
+  });
 
 app.use('/auth', auth);
 
 app.use('/users', users);
+
 
 app.listen(port, () => {
      console.log('Example app listening on port 3000!');

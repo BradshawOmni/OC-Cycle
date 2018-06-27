@@ -13,6 +13,7 @@
 body{
   background:#ccc;
 }
+
 //Interface Icons
 .fa-bars
 {
@@ -29,8 +30,13 @@ body{
 .pageHeaders h2{
   color:@nc-purp;
 }
+.navbar
+{
+  position:fixed !important;
+}
 .navbar-brand
 {
+
   color:@nc-purp;
   -webkit-transition: all .3s; /* Safari */
   transition: all .3s;
@@ -43,23 +49,33 @@ body{
 //App Sections (Header, Nav, Main Aside)
 .app-header
 {
-  position:relative !important;
+  position:fixed !important;
 }
 .app-body
 {
   margin-top:0px !important;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
 }
 .main
 {
+  margin-top:55px;
   background-color:#efefef;
-  height:93vh;
+  height:100% !important;
+  overflow:hidden;
 }
 .omniComp
 {
   margin:20px !important;
   border-radius:10px;
   background-color:#ffffff;
-  
+  padding:20px;
+  width:100%;
+}
+.sidebar
+{
+
 }
 .sidebar-minimizer
 {
@@ -95,6 +111,7 @@ body{
 }
 .sidebar-nav
 {
+  margin-top:55px;
   overflow-y:hidden !important;
   background-color:@nc-white !important;
 }
@@ -175,13 +192,15 @@ body{
 {
   background-color: @nc-purp !important;
   color:#fff !important;
+  border:1px solid @nc-purp;
   -webkit-transition: all .3s; /* Safari */
   transition: all .3s;
 }
 .OmniCommanderBtn:hover
 {
-  background-color: @nc-medgrey !important;
+  background-color: @nc-white !important;
   color: @nc-purp !important;
+  border:1px solid @nc-purp;
 }
 
 .list-group-item:nth-child(even) {
@@ -211,9 +230,6 @@ body{
 {
   margin-bottom:40px;
 }
-
-
-
 //Charts
 .chart-wrapper
 {

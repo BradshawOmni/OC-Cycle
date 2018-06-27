@@ -5,7 +5,6 @@ import PersonListRow from './PersonListRow';
 class PersonList extends Component {
   render() {
     const {persons} = this.props;
-    console.log(persons+'<<----Customer List Empty Var----');
     return (
       <div className="col-md-12">
         <div className="tableHeader">

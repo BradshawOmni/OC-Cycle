@@ -14,25 +14,39 @@ class CustomerForm extends Component {
   render() {
 
     const {customer, beenServed, onSave, onChange, saving, errors} = this.props;
-    
+
     const returnToPreviousPage = () => {
       browserHistory.push('/customers');
     };
 
     return (
-      <div className="container-fluid omniComp">
+      <div className="container omniComp">
         <div className="row">
           <div className = "pageHeaders">
-              <div className="col-md-12">
+              <div className="col-md-8">
                   <h2>{customer.cuName}</h2>
                   <h3>Account Details</h3>
               </div>
+            <div className = "col-md-2">   
+              <input
+              type="submit"
+              disabled={saving}
+              value={saving ? 'Saving...' : 'Save'}
+              className="btn OmniCommanderBtn col-12"
+              onClick={onSave} />
+            </div>
+            <div className = "col-md-2">
+              <button className="btn OmniCommanderBtn col-12"
+              type="submit" onClick={returnToPreviousPage}>
+                Back
+              </button>
+            </div>
           </div>
         </div>
        
         <form>
           <div className="row">
-            <div className="col-lg-4">
+            <div className="col-lg-6">
             <TextInput 
                name="cuName"
                label="Credit Union"
@@ -42,10 +56,11 @@ class CustomerForm extends Component {
                addClass="medium-textbox"
                error='' />
             </div>
-            <div className="col-lg-4">
+      
+            <div className="col-lg-6">
             <TextInput 
-               name="cuName"
-               label="POC"
+               name="contactName"
+               label="Person of Contact"
                placeholder="Enter POC Full Name"
                value={customer.contactName}
                onChange={onChange}
@@ -54,7 +69,7 @@ class CustomerForm extends Component {
             </div>
           </div>
           <div className="row">
-          <div className="col-lg-4">
+          <div className="col-lg-6">
             <TextInput 
                name="contactEmail"
                label="Contact Email Address"
@@ -64,9 +79,9 @@ class CustomerForm extends Component {
                addClass="medium-textbox"
                error='' />
             </div>
-            <div className="col-lg-4">
+            <div className="col-lg-6">
             <TextInput 
-               name="contactPhone"
+               name="contactNumber"
                label="Contact Phone Number"
                placeholder="Enter Contact Phone"
                value={customer.contactNumber}
@@ -75,30 +90,30 @@ class CustomerForm extends Component {
                error='' />
             </div>
           </div>
+
           <div className="row">
-            <div className="col-lg-3">
+            <div className="col-lg-4">
               <label htmlFor="walkthroughDate">Walkthrough Date</label>
               <DatePicker name="walkthroughDate"
-             
-              addClass="medium-textbox"
+              className="date-text-box form-control medium-textbox"
               selected={moment(customer.walkThroughDate)}
               onChange={onChange}
               />
               <br />
             </div>
-            <div className="col-lg-3">
+            <div className="col-lg-4">
                 <label htmlFor="contractSentDate">Contract Sent Date</label>
                 <DatePicker name="contractSentDate"
-                addClass="medium-textbox"
+                className="date-text-box form-control medium-textbox"
                 selected={moment(customer.contractSentDate)}
                 onChange={onChange}
               />
               <br />
             </div>
-            <div className="col-lg-3">
+            <div className="col-lg-4">
               <label htmlFor="contractSignedDate">Contract Signed Date</label>
               <DatePicker name="contractSignedDate"
-              addClass="medium-textbox"
+              className="date-text-box form-control medium-textbox"
               selected={moment(customer.contractSignedDate)}
               onChange={onChange}
               />
@@ -106,7 +121,7 @@ class CustomerForm extends Component {
           </div>
           </div>
           <div className="row">
-            <div className="col-lg-8">
+            <div className="col-lg-12">
               <TextArea
                 name="servicesProposed"
                 label="Services Proposed"
@@ -118,7 +133,7 @@ class CustomerForm extends Component {
             </div>
           </div>
           <div className="row">
-            <div className="col-lg-8">
+            <div className="col-lg-12">
               <TextArea
                 name="servicesSold"
                 label="Services Sold"
@@ -130,7 +145,7 @@ class CustomerForm extends Component {
             </div>
           </div>
           <div className="row">
-            <div className="col-sm-3">
+            <div className="col-lg-3">
             <SelectInput
              name="beenServed"
              label="Has the client been served?"
@@ -141,7 +156,7 @@ class CustomerForm extends Component {
             </div>
           </div>
           <div className="row">
-            <div className="col-lg-8">
+            <div className="col-lg-12">
               <TextArea
                 name="websitesClientLikes"
                 label="Websites Client Likes"
@@ -153,7 +168,7 @@ class CustomerForm extends Component {
             </div>
           </div>
           <div className="row">
-            <div className="col-lg-8">
+            <div className="col-lg-12">
               <TextArea
                 name="interestingClientFacts"
                 label="Interesting Facts About The Client"
@@ -164,28 +179,8 @@ class CustomerForm extends Component {
                 error='' />
             </div>
           </div>
-          <div className = "row">
-            <div className = "col-lg-3">
-            <input
-             type="submit"
-             disabled={saving}
-             value={saving ? 'Saving...' : 'Save'}
-             className="btn btn-primary btn-lg"
-             onClick={onSave} />
-            </div>
-          </div>
-          
         </form>
         </div>
-
-
-
-        
-  
-
-      
-      
-     
     );
   }
 }

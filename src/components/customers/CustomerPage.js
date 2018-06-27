@@ -25,7 +25,7 @@ class CustomerPage extends React.Component {
     const { customers } = this.props;
     return (
         
-      <div className="container-fluid omniComp">
+      <div className="container omniComp">
         <div className="row">
           <div className = "pageHeaders">
               <div className="col-md-4">
@@ -35,7 +35,7 @@ class CustomerPage extends React.Component {
               <input
                 type="submit"
                 value="Add New Customer"
-                className="btn nextcareBtn"
+                className="btn OmniCommanderBtn"
                 onClick={this.redirectToAddCustomerPage}
               />
               </div>

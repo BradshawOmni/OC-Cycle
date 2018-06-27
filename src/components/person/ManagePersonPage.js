@@ -11,7 +11,6 @@ import moment from 'moment';
 class ManagePersonPage extends React.Component {
   constructor(props, context) {
     super(props, context);
-
     this.state = {
       person: Object.assign({}, this.props.person),
       errors: {},

@@ -1,7 +1,7 @@
 import actions from '../actions/mirrorActions';
 import initialState from './initailState';
 
-export default function customerReducer(state = initialState.customers, action) {
+export default function clientMapReducer(state = initialState.customers, action) {
     switch (action.type) {
     case actions.LOAD_CUSTOMERS_SUCCESS:
       return action.customers.sort((customer1, customer2) => customer1.cuName.localeCompare(customer2.cuName));

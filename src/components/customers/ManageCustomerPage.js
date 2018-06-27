@@ -30,7 +30,9 @@ class ManageCustomerPage extends React.Component {
   updateCustomerState(event) {
     const field = event.target.name;
     let customer = this.state.customer;
+    
     customer[field] = event.target.value;
+    
     return this.setState({ customer: customer });
   }
 
@@ -57,6 +59,7 @@ class ManageCustomerPage extends React.Component {
     if (!this.customerFormIsValid()) {
       return;
     }
+
     this.setState({ saving: true });
     this.props.actions.saveCustomer(this.state.customer)
       .then(() => this.redirect())
@@ -69,7 +72,7 @@ class ManageCustomerPage extends React.Component {
   redirect() {
     this.setState({ saving: false });
     toastr.success('Customer saved!');
-    this.context.router.push('/customer');
+    this.context.router.push('/customers');
   }
 
   render() {
@@ -89,7 +92,8 @@ class ManageCustomerPage extends React.Component {
 }
 ManageCustomerPage.propTypes = {
   customer: PropTypes.object.isRequired,
-  actions: PropTypes.object.isRequired
+  actions: PropTypes.object.isRequired,
+  beenServed: PropTypes.array.isRequired 
 };
 
 // Pull in the React Router context so router is available on this.context.router.
@@ -104,12 +108,23 @@ function getCustomerById(customers, customerId) {
 }
 
 function mapStateToProps(state, ownProps) {
-
+ 
   const customerId = ownProps.params.id; // from the path '/customer/:id'
   let customer = {
     customerId: 0,
     personTypeId: 0,
-    cuName: ''
+    cuName: '',
+    contactName: '',
+    contactEmail:'',
+    contactNumber: '',
+    walkThroughDate: '1900-01-01T00:00:00',
+    contractSentDate: '1900-01-01T00:00:00',
+    contractSignedDate: '1900-01-01T00:00:00',
+    servicesProposed: '',
+    servicesSold: '',
+    beenServed: '',
+    websitesClientLikes: '',
+    interestingLinks: '',
    
   };
 if (customerId && state.customers.length > 0) {
@@ -127,6 +142,7 @@ const beenServed = [
 }
 
 function mapDispatchToProps(dispatch) {
+
   return {
     actions: bindActionCreators(customerActions, dispatch)
   };

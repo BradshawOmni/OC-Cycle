@@ -25,6 +25,7 @@
     "bootstrap": "^4.1.1",
     "chart.js": "git+https://github.com/chartjs/Chart.js.git",
     "es6-promise": "^4.2.2",
+    "google-maps-react": "^2.0.2",
     "i": "^0.3.6",
     "isomorphic-fetch": "^2.2.1",
     "jquery": "^2.2.3",

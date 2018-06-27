@@ -1,6 +1,7 @@
 import keyMirror from 'keymirror';
 
 const action = keyMirror({
+  
   // ajax calls
   BEGIN_AJAX_CALL: null,
   AJAX_CALL_ERROR: null,
@@ -29,9 +30,10 @@ const action = keyMirror({
   // Customer Actions //
   LOAD_CUSTOMERS_SUCCESS: null,
   LOAD_CUSTOMERS_FAILED: null,
-  CREATE_PERSON_SUCCESS: null,
-  UPDATE_CUSTOMER_SUCCESS: null,
+  CREATE_CUSTOMER_SUCCESS: null,
   CREATE_CUSTOMER_FAILED: null,
+  UPDATE_CUSTOMER_SUCCESS: null,
+  UPDATE_CUSTOMER_FAILED: null,
   UPDATE_CUSTOMER_FAILED: null,
   DELETE_CUSTOMER_SUCCESS: null,
   DELETE_CUSTOMER_FAILED: null,
@@ -59,6 +61,7 @@ const action = keyMirror({
   LOAD_PERSONS_FAILED: null,
   CREATE_PERSON_SUCCESS: null,
   UPDATE_PERSON_SUCCESS: null,
+  UPDATE_PERSON_FAILED: null,
   CREATE_PERSON_FAILED: null,
   UPDATE_PERSON_FAILED: null,
   DELETE_PERSON_SUCCESS: null,

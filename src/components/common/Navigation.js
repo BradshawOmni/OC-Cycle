@@ -37,6 +37,9 @@ class Navigation extends Component {
               <IndexLink to="/customers" className={this.state.textCollapse}><i className="fas fa-user fa-2x navIcon"></i> <span className = "navSpan">Customers</span> </IndexLink>
             </li>
             <li className="nav-item">
+              <IndexLink to="/clientmap" className={this.state.textCollapse}><i className="fas fa-map-marker-alt fa-2x navIcon"></i> <span className = "navSpan">Client Map</span> </IndexLink>
+            </li>
+            <li className="nav-item">
               <Link to="/accounts" className={this.state.textCollapse}><i className="far fa-address-card fa-2x navIcon"></i> <span className = "navSpan">Accounts</span></Link>
             </li>
             <li className="nav-item">

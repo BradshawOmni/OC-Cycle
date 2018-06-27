@@ -5,7 +5,6 @@ import CustomerListRow from './CustomerListRow';
 class CustomerList extends Component {
   render() {
     const {customers} = this.props;
-    console.log(customers+'<<----Customer List Empty Var----');
     return (
       <div className="col-md-12">
 

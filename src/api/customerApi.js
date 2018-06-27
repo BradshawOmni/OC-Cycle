@@ -5,9 +5,15 @@ import delay from './delay';
 // All calls return promises.
 const customers = [
   {
-    customerId: 1,
+    customerId: 0,
     customerTypeId: 1,
     cuName: 'Inspire Federal Credit Union',
+    cuStreet: '3 Friends Lane',
+    cuCity: 'Newtown',
+    cuState: 'PA',
+    cuZip: '18940',
+    cuLat: '40.230130',
+    cuLong: '-74.915442',
     contactName: 'Alexis',
     contactEmail: 'alexis@inspirefcu.org',
     contactNumber: '8888888888',
@@ -19,9 +25,15 @@ const customers = [
     interestingClientFacts: 'Very elusive, Easy going, and super nice',
   },
   {
-    customerId: 2,
+    customerId: 1,
     customerTypeId: 2,
     cuName: 'Dade County Federal Credit Union',
+    cuStreet: '1500 NW 107 Avenue',
+    cuCity: 'Miami',
+    cuState: 'FL',
+    cuZip: '33172',
+    cuLat: '25.788447',
+    cuLong: '-80.369736',
     contactName: 'Moe',
     contactEmail: 'moe@dcfcu.org',
     contactNumber: '8888888888',
@@ -33,9 +45,15 @@ const customers = [
     interestingClientFacts: 'Very elusive, Easy going, fucks with chickens',
   },
   {
-    customerId: 3,
+    customerId: 2,
     customerTypeId: 3,
     cuName: 'Panhandle Educators Federal Credit Union',
+    cuStreet: '2718 MLK Jr. Blvd.',
+    cuCity: 'Panama City',
+    cuState: 'FL',
+    cuZip: '32405',
+    cuLat: '30.198039',
+    cuLong: '-85.649067',
     contactName: 'Person',
     contactEmail: 'person@pefcu.org',
     contactNumber: '8888888888',
@@ -47,9 +65,15 @@ const customers = [
     interestingClientFacts: 'Quiet, Smelly',
   },
   {
-    customerId: 4,
+    customerId: 3,
     customerTypeId: 4,
     cuName: 'New York University Federal Credit Union',
+    cuStreet: '726 Broadway, Suite 110',
+    cuCity: 'New York',
+    cuState: 'NY',
+    cuZip: '10003',
+    cuLat: '40.729317',
+    cuLong: '-73.993205',
     contactName: 'Angla',
     contactEmail: 'angla@nyufcu.edu',
     contactNumber: '8888888888',
@@ -86,17 +110,15 @@ class customerApi {
       setTimeout(() => {
         // Simulate server-side validation
         const mincustomerNameLength = 3;
-        if (customer.firstName.length < mincustomerNameLength) {
+        if (customer.cuName.length < mincustomerNameLength) {
           reject(`First name must be at least ${mincustomerNameLength} characters.`);
         }
 
-        if (customer.lastName.length < mincustomerNameLength) {
+        if (customer.contactEmail.length < mincustomerNameLength) {
           reject(`Last name must be at least ${mincustomerNameLength} characters.`);
         }
-
         //debugger;
         if (customer.customerId) {
-            console.log('Get All Customers Called in Customer.js ');
           const existingcustomerIndex = customers.findIndex(a => a.customerId === customer.customerId);
           customers.splice(existingcustomerIndex, 1, customer);
         } else {

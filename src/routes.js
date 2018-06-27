@@ -2,10 +2,10 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 import App from './components/app';
 import HomePage from './components/home/HomePage';
-
-import ManageAccountPage from './components/account/ManageAccountPage';
 import CustomerPage from './components/customers/CustomerPage';
 import ManageCustomerPage from './components/customers/ManageCustomerPage';
+import ClientMap from './components/clientMap/ClientMap';
+import ManageAccountPage from './components/account/ManageAccountPage';
 import AccountPage from './components/account/AccountPage';
 import ManageInvoicePage from './components/invoice/ManageInvoicePage';
 import InvoicePage from './components/invoice/InvoicePage';
@@ -16,7 +16,9 @@ export default (
   <Route path="/" component={App}>
     <IndexRoute component={HomePage} />
     <Route path="customers" component={CustomerPage} />
+    <Route path="customer" component={ManageCustomerPage} />
     <Route path="customer/:id" component={ManageCustomerPage} />
+    <Route path="clientmap" component={ClientMap} />
     <Route path="accounts" component={AccountPage} />
     <Route path="account" component={ManageAccountPage} />
     <Route path="account/:id" component={ManageAccountPage} />

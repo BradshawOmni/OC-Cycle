@@ -2,9 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
- 
+import iconMarker from '../../img/omniAnit.svg';
 
  
 export class ClientMap extends React.Component {
@@ -21,10 +20,8 @@ export class ClientMap extends React.Component {
       initialCenter={{lat:41.850033,lng: -87.6500523}}>
       {customers.map(customer =>
       <Marker
-          icon={{
-            url: 'https://www.omnicommander.com/assets/omniStar.svg',
-            scale: '20'
-          }}
+          icon={iconMarker}
+          scale={.5}
           key = {customer.customerId}
           title={customer.cuName}
           name={customer.cuName}
@@ -40,7 +37,7 @@ export class ClientMap extends React.Component {
 ClientMap.propTypes = {
   customers: PropTypes.array.isRequired
 };
-function mapStateToProps(state, ownProps) {
+function mapStateToProps(state) {
   return {
     customers: state.customers
   };

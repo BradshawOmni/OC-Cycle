@@ -2,6 +2,7 @@ import actions from '../actions/mirrorActions';
 import initialState from './initailState';
 
 export default function personReducer(state = initialState.persons, action) {
+  console.log(action.type+'---->');
   switch (action.type) {
     case actions.LOAD_PERSONS_SUCCESS:
       return action.persons.sort((person1, person2) => person1.lastName.localeCompare(person2.lastName));

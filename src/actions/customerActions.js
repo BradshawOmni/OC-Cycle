@@ -23,8 +23,7 @@ export function createcustomerSuccess(customer) {
     customer
   };
 }
-
-export function createCustomerFailed(message) {
+export function createcustomerfailed(message) {
 console.log('CreateFail');
   return {
     type: action.CREATE_CUSTOMER_FAILED,
@@ -32,16 +31,16 @@ console.log('CreateFail');
   };
 }
 
-export function updatecustomerSuccess(customer) {
-  
+export function updatecustomersuccess(customer) {
+
   return {
     type: action.UPDATE_CUSTOMER_SUCCESS,
     customer
   };
 }
 
-export function updatePersonFailed(message) {
- 
+export function updatecustomerfailed(message) {
+  console.log(message);
   return {
     type: action.UPDATE_CUSTOMER_FAILED,
     message
@@ -62,18 +61,20 @@ export function loadcustomers() {
 }
 
 export function saveCustomer(customer) {
-  console.log(customer);
+  console.log(customer + '------Save');
   return function (dispatch, getState) {
+    
     dispatch(beginAjaxCall());
+    console.log(customer + '------Save');
     try {
-      return customerApi.saveCustomer(customer).then(savedCustomer => {
-       
+      console.log(customer.customerId + '---- ID');
+        return customerApi.saveCustomer(customer).then(savedCustomer => {
         customer.customerId ? dispatch(updatecustomersuccess(savedCustomer)) :
-       
-          dispatch(createcustomerSuccess(savedCustomer));
-          console.log(customer.customerId + '---- ID');
+        dispatch(createcustomerSuccess(savedCustomer));
+          
       });
     } catch (error) {
+      console.log(customer.customerId + '---- ID');
       dispatch(ajaxCallError(error));
       return customer.customerId ? dispatch(updateCustomerFailed(error.message)) :
         dispatch(createCustomerFailed(error.message));

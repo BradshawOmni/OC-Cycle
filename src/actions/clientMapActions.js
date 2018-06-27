@@ -15,7 +15,6 @@ export function loadcustomersFailed(message) {
     message
   };
 }
-
 export function createcustomerSuccess(customer) {
   console.log('create customer success');
   return {
@@ -67,13 +66,14 @@ export function saveCustomer(customer) {
     dispatch(beginAjaxCall());
     try {
       return customerApi.saveCustomer(customer).then(savedCustomer => {
-       
+        console.log(customer.customerId + '---- ID');
         customer.customerId ? dispatch(updatecustomersuccess(savedCustomer)) :
        
           dispatch(createcustomerSuccess(savedCustomer));
-          console.log(customer.customerId + '---- ID');
+         
       });
     } catch (error) {
+      
       dispatch(ajaxCallError(error));
       return customer.customerId ? dispatch(updateCustomerFailed(error.message)) :
         dispatch(createCustomerFailed(error.message));

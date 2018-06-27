@@ -15,8 +15,8 @@ import { loadAddresses } from './actions/addressActions';
 import {loadAddressTypes} from './actions/addressTypeActions';
 import {loadPersons} from './actions/personActions';
 import {loadcustomers} from './actions/customerActions';
-import './styles/styles.css'; // webpack can import CSS files too!
 import './styles/lessStyle.less';
+import './styles/map.less';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/toastr/build/toastr.min.css';
 import '../node_modules/@coreui/coreui/dist/css/coreui.min.css';

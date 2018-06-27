@@ -5,19 +5,53 @@ import { bindActionCreators } from 'redux';
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import iconMarker from '../../img/omniAnit.svg';
 
+
  
 export class ClientMap extends React.Component {
+
   constructor(props, context) {
     super(props, context);
+   
+    this.state = {
+      showingInfoWindow: false,
+      activeMarker: {},
+      selectedPlace: {},
+      customers: this.props
+    }
+    // binding this to event-handler functions
+    this.onMarkerClick = this.onMarkerClick.bind(this);
+    this.onMapClick = this.onMapClick.bind(this);
+    
   }
+  onMarkerClick(props, marker, e){
+    
+    this.setState({
+      selectedPlace: props,
+      activeMarker: marker,
+      showingInfoWindow: true
+    });
+  }
+  onMapClick(props){
+    if (this.state.showingInfoWindow) {
+      this.setState({
+        showingInfoWindow: false,
+        activeMarker: null
+      });
+    }
+  }
+
+
   render() {
     const { customers } = this.props;
+    
     return (
+    
+    //Load Map
     <Map google={this.props.google} 
       zoom={5}
-      
-      mapTypeId='roadmap'
-      initialCenter={{lat:41.850033,lng: -87.6500523}}>
+      onClick={this.onMapClicked}
+      mapType='HYBRID'
+      initialCenter={{lat:41.850033,lng: -87.6500523}}>  
       {customers.map(customer =>
       <Marker
           icon={iconMarker}
@@ -25,11 +59,18 @@ export class ClientMap extends React.Component {
           key = {customer.customerId}
           title={customer.cuName}
           name={customer.cuName}
-          position={{lat: customer.cuLat, lng: customer.cuLong}} 
-      />
+          onClick = { this.onMarkerClick }
+          name={customer.cuName}
+          position={{lat: customer.cuLat, lng: customer.cuLong}} >
+      </Marker>
      )}
-    <InfoWindow onClose={this.onInfoWindowClose}>
-    </InfoWindow>
+      <InfoWindow
+      className = "mapInfoWindow"
+      marker = { this.state.activeMarker }
+      visible = { this.state.showingInfoWindow }>
+      <h3>{this.state.selectedPlace.title}</h3>
+      </InfoWindow>
+   
     </Map>
     );
   }

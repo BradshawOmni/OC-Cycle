@@ -61,6 +61,7 @@ export function savePerson(person) {
   return function (dispatch, getState) {
     dispatch(beginAjaxCall());
     try {
+      console.log(person.personId + '---- ID');
       return personApi.savePerson(person).then(savedPerson => {
         person.personId ? dispatch(updatePersonSuccess(savedPerson)) :
           dispatch(createPersonSuccess(savedPerson));

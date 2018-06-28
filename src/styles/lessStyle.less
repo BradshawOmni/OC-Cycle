@@ -21,18 +21,23 @@ body{
 }
 ///Header
 .pageHeaders{
-  display:flex;
   width:100%;
-  margin-bottom:20px;
+ 
   margin-top:20px;
+  margin-left:20px;
   border-bottom:1px dotted @nc-medgrey;
+}
+.saveButtons
+{
+  display:flex;
+  
 }
 .pageHeaders h2{
   color:@nc-purp;
 }
 .navbar
 {
-  position:fixed !important;
+  position:relative !important;
 }
 .navbar-brand
 {
@@ -49,7 +54,7 @@ body{
 //App Sections (Header, Nav, Main Aside)
 .app-header
 {
-  position:fixed !important;
+  position:relative !important;
 }
 .app-body
 {
@@ -60,10 +65,12 @@ body{
 }
 .main
 {
-  margin-top:55px;
+  
   background-color:#efefef;
   height:100% !important;
   overflow:hidden;
+  margin-left:0px !important;
+  margin-right:10px !important;
 }
 .omniComp
 {
@@ -75,7 +82,7 @@ body{
 }
 .sidebar
 {
-
+position:relative !important;
 }
 .sidebar-minimizer
 {
@@ -111,7 +118,7 @@ body{
 }
 .sidebar-nav
 {
-  margin-top:55px;
+  
   overflow-y:hidden !important;
   background-color:@nc-white !important;
 }
@@ -164,10 +171,28 @@ body{
 }
   
 //Forms
+
+select
+{
+  margin-bottom:20px !important;
+}
 .form-group label
 {
-  color:@nc-purp;
-  font-weight:bold;
+  color:@nc-purp !important;
+  font-weight:bold !important;
+}
+label
+{
+  color:@nc-purp !important;
+  font-weight:bold !important;
+}
+.formSeperator
+{
+  border-bottom:1px solid @nc-purp !important;
+}
+.btnPosition
+{
+  margin-right:30px !important;
 }
 //////////////////////////////////////////Page Items
 //Home Page
@@ -211,7 +236,23 @@ body{
   background-color: nc-lightgrey;
   border:1px solid @nc-medgrey;
 } 
-
+//Tables
+.tableHeader
+{
+    display:flex;
+    width:100%;
+    margin-bottom:10px;
+    font-weight:bold;
+}
+.item-detail {
+ 
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 1em;
+}
+.number-detail {
+  text-align: right;
+}
 ///Invoice Items//
 .total-line {
   font-weight: bold;

@@ -24,25 +24,33 @@ class CustomerPage extends React.Component {
     
     const { customers } = this.props;
     return (
-        
-      <div className="container omniComp">
-        <div className="row">
-          <div className = "pageHeaders">
-              <div className="col-md-4">
-                  <h2>Customer List</h2>
-              </div>
-              <div className="col-md-8 text-right">
-              <input
+      <div className="container-fluid">
+      <div className="row">
+        <div className = "col-md-12 ">
+            <div className = "pageHeaders">
+                  <h1>Customer List</h1>
+            </div>
+            <div className = "row">
+              <div className = "col-md-12">
+                <div className = "btnPosition">
+                <input
                 type="submit"
                 value="Add New Customer"
-                className="btn OmniCommanderBtn"
+                className="btn OmniCommanderBtn float-right"
                 onClick={this.redirectToAddCustomerPage}
-              />
+                />
+                </div>
               </div>
-          </div>
-          <CustomerList customers={customers} />
+            </div>
         </div>
+      </div> 
+      <div className="row omniComp">
+      <div className = "col-md-12 ">
+        <CustomerList customers={customers} />
+      </div>
+      </div>
     </div>
+
     
     );
     
@@ -65,5 +73,4 @@ function mapDispatchToProps(dispatch) {
     actions: bindActionCreators(customerActions, dispatch)
   };
 }
-
 export default connect(mapStateToProps, mapDispatchToProps)(CustomerPage);

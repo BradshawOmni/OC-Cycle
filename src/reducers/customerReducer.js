@@ -2,6 +2,7 @@ import actions from '../actions/mirrorActions';
 import initialState from './initailState';
 
 export default function customerReducer(state = initialState.customers, action) {
+  console.log(action.type+'---->');
     switch (action.type) {
     case actions.LOAD_CUSTOMERS_SUCCESS:
       return action.customers.sort((customer1, customer2) => customer1.cuName.localeCompare(customer2.cuName));
@@ -12,8 +13,8 @@ export default function customerReducer(state = initialState.customers, action) 
         Object.assign({}, action.customer)
         
       ];
-      console.log('----');
     case actions.UPDATE_CUSTOMER_SUCCESS:
+    console.log('!');
       return [
         ...state.filter(customer => customer.customerId !== action.customer.customerId).sort((customer1, customer2) => customer1.cuName.localeCompare(customer2.cuName)),
         Object.assign({}, action.customer)

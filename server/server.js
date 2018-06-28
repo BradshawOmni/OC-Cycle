@@ -14,6 +14,7 @@ const sessionsSecret = require('./config/sessionConfig').secret;
 
 //load user model
 require('./models/User');
+require('./models/Customer');
 
 //Passport config
 require('./config/passport')(passport);
@@ -21,6 +22,8 @@ require('./config/passport')(passport);
 //Load Routes
 const auth = require('./routes/auth');
 const users = require('./routes/users');
+const customers = require('./routes/customers');
+
 
 
 //Mongoose connect 
@@ -75,6 +78,8 @@ app.get('/dashboard', (req, res) => {
 app.use('/auth', auth);
 
 app.use('/users', users);
+
+app.use('/customers', customers);
 
 
 app.listen(port, () => {

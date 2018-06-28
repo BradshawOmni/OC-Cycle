@@ -49,14 +49,11 @@ class CustomerPage extends React.Component {
         <CustomerList customers={customers} />
       </div>
       </div>
-    </div>
-
-    
+    </div>   
     );
     
   }
 }
-
 CustomerPage.propTypes = {
   customers: PropTypes.array.isRequired,
   actions: PropTypes.object.isRequired

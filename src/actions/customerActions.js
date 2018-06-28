@@ -17,14 +17,14 @@ export function loadcustomersFailed(message) {
 }
 
 export function createcustomerSuccess(customer) {
-  console.log('create customer success');
+
   return {
     type: action.CREATE_CUSTOMER_SUCCESS,
     customer
   };
 }
 export function createcustomerfailed(message) {
-console.log('CreateFail');
+
   return {
     type: action.CREATE_CUSTOMER_FAILED,
     message
@@ -40,7 +40,7 @@ export function updatecustomersuccess(customer) {
 }
 
 export function updatecustomerfailed(message) {
-  console.log(message);
+
   return {
     type: action.UPDATE_CUSTOMER_FAILED,
     message

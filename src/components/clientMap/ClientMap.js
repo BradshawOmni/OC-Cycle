@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import Geocode from 'react-geocode';
 import iconMarker from '../../img/omniAnit.svg';
+
 
 
  
@@ -43,9 +45,18 @@ export class ClientMap extends React.Component {
 
   render() {
     const { customers } = this.props;
-    
+    Geocode.fromAddress("Eiffel Tower").then(
+      response => {
+        const { lat, lng } = response.results[0].geometry.location;
+        console.log(lat, lng);
+      },
+      error => {
+        console.error(error);
+      }
+    );
     return (
-    
+    // Get latidude & longitude from address.
+
     //Load Map
     <Map google={this.props.google} 
       zoom={5}

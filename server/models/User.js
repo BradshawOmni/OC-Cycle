@@ -16,6 +16,9 @@ const mongoose = require('mongoose');
     lastName: {
         type: String
     },
+    image: {
+        type: String
+    },
     role: {
         type: String,
         default: ""

@@ -32,7 +32,7 @@ class ManageCustomerPage extends React.Component {
     let customer = this.state.customer;
     
     customer[field] = event.target.value;
-    
+    console.log(customer + " " + field);
     return this.setState({ customer: customer });
   }
 
@@ -124,7 +124,7 @@ function mapStateToProps(state, ownProps) {
     servicesSold: '',
     beenServed: '',
     websitesClientLikes: '',
-    interestingLinks: '',
+    interestingLinks: ''
    
   };
 if (customerId && state.customers.length > 0) {

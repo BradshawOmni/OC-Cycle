@@ -21,6 +21,7 @@
   "license": "ISC",
   "dependencies": {
     "@coreui/coreui": "^2.0.1",
+    "axios": "^0.18.0",
     "babel-polyfill": "6.8.0",
     "bootstrap": "^4.1.1",
     "chart.js": "git+https://github.com/chartjs/Chart.js.git",

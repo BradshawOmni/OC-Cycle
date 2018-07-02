@@ -13,13 +13,13 @@ router.get('/',  (req, res) => {
         if(err) {
             console.log(err);
         } else {
-            var customerMap = {};
+            // var customerMap = {};
     
-            customers.forEach(function(customer) {
-                customerMap[customer._id] = customer;
-            });
+            // customers.forEach(function(customer) {
+            //     customerMap[customer._id] = customer;
+            // });
         
-            res.send(customerMap);  
+            res.send(customers);  
         }
         
       });
@@ -28,11 +28,27 @@ router.get('/',  (req, res) => {
 
 //route to get single customer
 router.get('/:id', (req, res) => {
-    User.findById(req.params.id, function(err, customer) {
+    Customer.findById(req.params.id, function(err, customer) {
         if(err) {
             console.log(err);
         } else {        
             res.send(customer);  
+        }
+        
+      });
+});
+
+
+//route to delete a customer
+router.delete('/:id', (req, res) => {
+    Customer.deleteOne({_id: req.params.id}, function(err) {
+        if(err) {
+            console.log(err);
+        } else {        
+           res.json({
+               success: true,
+               message: "customer deleted"
+           });
         }
         
       });

@@ -25,6 +25,7 @@ const customers = [
     beenServed: "true",
     websitesClientLikes: 'Chattanooga, Core, Port Arthur Teachers',
     interestingClientFacts: 'Very elusive, Easy going, and super nice',
+    websiteStatus:"sold"
   },
   {
     customerId: 1,
@@ -47,6 +48,7 @@ const customers = [
     beenServed: "true",
     websitesClientLikes: 'Inspire, Savannah',
     interestingClientFacts: 'Very elusive, Easy going, fucks with chickens',
+    websiteStatus:"deposit"
   },
   {
     customerId: 2,
@@ -69,6 +71,7 @@ const customers = [
     beenServed: "false",
     websitesClientLikes: 'Inspire, Savannah, Dade',
     interestingClientFacts: 'Quiet, Smelly',
+    websiteStatus:"live"
   },
   {
     customerId: 3,
@@ -93,6 +96,7 @@ const customers = [
     beenServed: "false",
     websitesClientLikes: 'Savannah, Panhandle Teachers, NYUFCU',
     interestingClientFacts: 'Fucks with chickens like all day',
+    websiteStatus:"production"
   }
 ];
 

@@ -55,7 +55,12 @@ app.use(session({
     resave: false, 
     saveUninitialized: false
  }));
-  
+ app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  }); 
+
 //passport middleware
 app.use(passport.initialize());
 app.use(passport.session());

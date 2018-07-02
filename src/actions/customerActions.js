@@ -1,6 +1,15 @@
 import action from './mirrorActions';
 import customerApi from '../api/customerApi';
 import { beginAjaxCall, ajaxCallError } from './ajaxStatusActions';
+import axios from 'axios';
+
+//Types
+const LOAD_CUSTOMERS_SUCCESS = "LOAD_CUSTOMERS_SUCCESS",
+      LOAD_CUSTOMERS_FAILED = "LOAD_CUSTOMERS_FAILED",
+      CREATE_CUSTOMER_SUCCESS = "CREATE_CUSTOMER_SUCCESS",
+      CREATE_CUSTOMER_FAILED = "CREATE_CUSTOMER_FAILED",
+      UPDATE_CUSTOMER_SUCCESS = "UPDATE_CUSTOMER_SUCCESS",
+      UPDATE_CUSTOMER_FAILED = "UPDATE_CUSTOMER_FAILED";
 
 export function loadcustomersSuccess(customers) {
   return {
@@ -50,10 +59,25 @@ export function updatecustomerfailed(message) {
 export function loadcustomers() {
   return function (dispatch) {
     dispatch(beginAjaxCall());
+
     try {
-      return customerApi.getAllCustomers().then(customers => {
-        dispatch(loadcustomersSuccess(customers));
-      });
+      axios.get('http://localhost:3000/customers', {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+          .then(response => { 
+            return response.data;
+          }).then(data => {
+            console.log(data);
+            dispatch(loadcustomersSuccess(data));
+            return data;
+          }).catch(err => {
+            console.log("Error with the Api request");
+          });
+      // return customerApi.getAllCustomers().then(customers => {
+        
+      // });
     } catch (error) {
       return dispatch(loadcustomersFailed(error.message));
     }
@@ -67,12 +91,27 @@ export function saveCustomer(customer) {
     dispatch(beginAjaxCall());
     console.log(customer + '------Save');
     try {
-      console.log(customer.customerId + '---- ID');
-        return customerApi.saveCustomer(customer).then(savedCustomer => {
-        customer.customerId ? dispatch(updatecustomersuccess(savedCustomer)) :
-        dispatch(createcustomerSuccess(savedCustomer));
+        axios.post('http://localhost:3000/customers', {
+          method: 'POST',
+          body: customer,
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          mode: 'cors'
+          }).then(response => { 
+                return response;
+              }).then(data => {
+                console.log(data);
+                return dispatch(createcustomerSuccess(data.data));
+              }).catch(err => {
+                console.log("Error with the Api request");
+              });
+      // console.log(customer.customerId + '---- ID');
+      //   return customerApi.saveCustomer(customer).then(savedCustomer => {
+      //   customer.customerId ? dispatch(updatecustomersuccess(savedCustomer)) :
+      //   dispatch(createcustomerSuccess(savedCustomer));
           
-      });
+      // });
     } catch (error) {
       console.log(customer.customerId + '---- ID');
       dispatch(ajaxCallError(error));

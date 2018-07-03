@@ -55,7 +55,7 @@ const mongoose = require('mongoose');
         default: ""
     },
     beenServed: {
-        type: Boolean,
+        type: String,
         default: false
     },
     websitesClientLikes: {

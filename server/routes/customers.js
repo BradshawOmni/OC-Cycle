@@ -58,13 +58,12 @@ router.delete('/:id', (req, res) => {
 //route to post customer data
 router.post('/',  (req, res) => {
 
-    const {customerId, customerTypeId, cuName, cuStreet, cuCity, cuState, cuZip, cuLat, cuLong, contactName, contactEmail, contactNumber, walkThroughDate, servicesProposed, servicesSold, beenServed, websitesClientLikes, interestingClientFacts} = req.body;
-    var Model;
-    // Object.assign(Model, req.body)
-    console.log(Model);
+    const {customerId, customerTypeId, cuName, cuStreet, cuCity, cuState, cuZip, cuLat, cuLong, contactName, contactEmail, contactNumber, walkThroughDate, servicesProposed, servicesSold, beenServed, websitesClientLikes, interestingClientFacts} = JSON.parse(req.body.data);
+    // var Model = JSON.parse(req.body.data);
+    // // Object.assign(Model, req.body)
+    // console.log(Model);
 
     let newCustomer = {
-        customerId, 
         customerTypeId,
         cuName,
         cuStreet,
@@ -83,12 +82,10 @@ router.post('/',  (req, res) => {
         websitesClientLikes,
         interestingClientFacts
     }
+    console.log(newCustomer);
         new Customer(newCustomer).save()
                     .then(customer => {
-                        res.json({
-                            success: true,
-                            data: customer
-                        });
+                        res.json(customer);
                     }).catch(err => {
                         console.log(err);
                     });

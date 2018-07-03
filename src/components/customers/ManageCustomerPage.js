@@ -28,11 +28,12 @@ class ManageCustomerPage extends React.Component {
     }
   }
   updateCustomerState(event) {
+    
     const field = event.target.name;
     let customer = this.state.customer;
     
     customer[field] = event.target.value;
-    console.log(customer + " " + field);
+   
     return this.setState({ customer: customer });
   }
 
@@ -55,14 +56,21 @@ class ManageCustomerPage extends React.Component {
   }
 
   saveCustomer(event) {
+   
     event.preventDefault();
     if (!this.customerFormIsValid()) {
       return;
     }
-
+    let customer = this.state.customer;
+    customer = JSON.stringify(customer);
     this.setState({ saving: true });
-    this.props.actions.saveCustomer(this.state.customer)
-      .then(() => this.redirect())
+   
+    this.props.actions.saveCustomer(customer) 
+      .then((data) => 
+      {
+        console.log('data');
+        this.redirect('/customer')
+      })  
       .catch(error => {
         this.setState({ saving: false });
         toastr.error(error);

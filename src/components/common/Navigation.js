@@ -13,7 +13,6 @@ class Navigation extends Component {
     }
     this.toggleMenu = this.toggleMenu.bind(this);
   }
-
   toggleMenu() {
     var css = (this.props.showHideSidenav === "nav-menu-minimized") ? "nav-menu-minimized" : "sidebar-minimized";
     document.body.classList.toggle(css);

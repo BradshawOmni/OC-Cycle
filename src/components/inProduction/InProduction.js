@@ -24,32 +24,13 @@ class InProduction extends React.Component {
     
     const { customers } = this.props;
     return (
-      <div className="container-fluid">
-      <div className="row">
-        <div className = "col-md-12 ">
-            <div className = "pageHeaders">
-                  <h1>Customer List</h1>
-            </div>
-            <div className = "row">
-              <div className = "col-md-12">
-                <div className = "btnPosition">
-                <input
-                type="submit"
-                value="Add New Customer"
-                className="btn OmniCommanderBtn float-right"
-                onClick={this.redirectToAddCustomerPage}
-                />
-                </div>
-              </div>
-            </div>
+      <div className="container-fluid">  
+        <div className="row omniComp">
+          <div className = "col-md-12 ">
+            <ProductionList customers={customers} />
+          </div>
         </div>
-      </div> 
-      <div className="row omniComp">
-      <div className = "col-md-12 ">
-        <ProductionList customers={customers} />
-      </div>
-      </div>
-    </div>   
+      </div>   
     );
     
   }

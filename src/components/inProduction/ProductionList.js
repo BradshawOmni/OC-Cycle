@@ -7,14 +7,6 @@ class ProductionList extends Component {
     const {customers} = this.props;
     return (
       <div className="col-md-12">
-
-        <div className="tableHeader">
-         
-          <div className="col-sm-3">Credit Union</div>
-          <div className="col-sm-2">Contact</div>
-          <div className="col-sm-3">Email</div>
-          <div className="col-sm-2">Phone</div>
-        </div>
         <div className="list-group">
         {customers.map(customer =>
           <ProductionListRow key={customer.customerId} customer={customer} />

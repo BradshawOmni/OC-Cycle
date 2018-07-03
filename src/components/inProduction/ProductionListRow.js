@@ -7,15 +7,15 @@ class ProductionListRow extends Component {
   render() {
     const {customer} = this.props;
     return (
+        
+          <div className = "row prodListContainer">
+            <div className="col-sm-3"><strong>{customer.cuName}</strong></div>
+            <div className="col-sm-2">Add Signed Date</div>
+            <div className="col-sm-3">Add Kickoff Call Date</div>
+            <div className="col-sm-2">Add Prospective Go Live Date (Add and icon if a firm date)</div>
+          </div>
+        
 
-      <Link className="list-group-item list-group-item-action flex-column align-items-start" to={'/customer/' + customer.customerId}  >
-        <div className="row">  
-          <div className="col-sm-3"><strong>{customer.cuName}</strong></div>
-          <div className="col-sm-2">{customer.contactName}</div>
-          <div className="col-sm-3">{customer.contactEmail}</div>
-          <div className="col-sm-2">{customer.contactNumber}</div>
-        </div>
-      </Link>
     );
   }
 }

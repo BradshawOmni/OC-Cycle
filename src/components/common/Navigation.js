@@ -13,7 +13,6 @@ class Navigation extends Component {
     }
     this.toggleMenu = this.toggleMenu.bind(this);
   }
-
   toggleMenu() {
     var css = (this.props.showHideSidenav === "nav-menu-minimized") ? "nav-menu-minimized" : "sidebar-minimized";
     document.body.classList.toggle(css);
@@ -39,6 +38,11 @@ class Navigation extends Component {
             <li className="nav-item">
               <IndexLink to="/clientmap" className={this.state.textCollapse}><i className="fas fa-map-marker-alt fa-2x navIcon"></i> <span className = "navSpan">Client Map</span> </IndexLink>
             </li>
+            <li className="nav-item">
+              <IndexLink to="/inProduction" className={this.state.textCollapse}><i className="fas fa-user fa-2x navIcon"></i> <span className = "navSpan">Dev Production</span> </IndexLink>
+            </li>
+           
+           
             <li className="nav-item">
               <Link to="/accounts" className={this.state.textCollapse}><i className="far fa-address-card fa-2x navIcon"></i> <span className = "navSpan">Accounts</span></Link>
             </li>

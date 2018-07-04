@@ -26,14 +26,14 @@ export function loadcustomersFailed(message) {
 }
 
 export function createcustomerSuccess(customer) {
-  console.log('create customer success');
+
   return {
     type: action.CREATE_CUSTOMER_SUCCESS,
     customer
   };
 }
 export function createcustomerfailed(message) {
-console.log('CreateFail');
+
   return {
     type: action.CREATE_CUSTOMER_FAILED,
     message
@@ -49,7 +49,7 @@ export function updatecustomersuccess(customer) {
 }
 
 export function updatecustomerfailed(message) {
-  console.log(message);
+
   return {
     type: action.UPDATE_CUSTOMER_FAILED,
     message
@@ -85,24 +85,29 @@ export function loadcustomers() {
 }
 
 export function saveCustomer(customer) {
-  console.log(customer + '------Save');
+ 
   return function (dispatch, getState) {
     
     dispatch(beginAjaxCall());
-    console.log(customer + '------Save');
+   
     try {
         axios.post('http://localhost:3000/customers', {
           method: 'POST',
-          body: customer,
+          data: customer,
           headers: {
             'Content-Type': 'application/json'
           },
           mode: 'cors'
           }).then(response => { 
-                return response;
-              }).then(data => {
-                console.log(data);
-                return dispatch(createcustomerSuccess(data.data));
+                
+                
+
+                return response
+
+                
+              }).then(res => {
+                console.log(JSON.stringify(res.data) + 'Response Data');
+                return dispatch(createcustomerSuccess(JSON.stringify(res.data)));
               }).catch(err => {
                 console.log("Error with the Api request");
               });

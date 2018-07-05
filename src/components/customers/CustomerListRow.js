@@ -8,7 +8,7 @@ class CustomerListRow extends Component {
     const {customer} = this.props;
     return (
 
-      <Link className="list-group-item list-group-item-action flex-column align-items-start" to={'/customer/' + customer.customerId}  >
+      <Link className="list-group-item list-group-item-action flex-column align-items-start" to={'/customer/' + customer._id}  >
         <div className="row">  
           <div className="col-sm-3"><strong>{customer.cuName}</strong></div>
           <div className="col-sm-2">{customer.contactName}</div>

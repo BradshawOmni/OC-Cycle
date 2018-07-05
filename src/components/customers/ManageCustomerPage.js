@@ -22,7 +22,7 @@ class ManageCustomerPage extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.customer.customerId != nextProps.customer.customerId) {
+    if (this.props.customer._id != nextProps.customer._id) {
       // necessary to populate form whene existing person is loaded directly.
       this.setState({ customer: Object.assign({}, nextProps.customer) });
     }
@@ -110,7 +110,7 @@ ManageCustomerPage.contextTypes = {
 };
 
 function getCustomerById(customers, customerId) {
-  const customer = customers.filter(customer => customer.customerId == customerId);
+  const customer = customers.filter(customer => customer._id == customerId);
   if (customer) return customer[0]; // since filter returns an array, have to grab the first.
   return null;
 }

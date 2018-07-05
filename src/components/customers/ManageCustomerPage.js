@@ -65,16 +65,17 @@ class ManageCustomerPage extends React.Component {
     customer = JSON.stringify(customer);
     this.setState({ saving: true });
    
-    this.props.actions.saveCustomer(customer) 
-      .then((data) => 
-      {
-        console.log('data');
-        this.redirect('/customer')
-      })  
-      .catch(error => {
-        this.setState({ saving: false });
-        toastr.error(error);
-      });
+    this.props.actions.saveCustomer(customer);
+    this.redirect('/customers');
+      // .then((data) => 
+      // {
+      //   console.log('Redirecting');
+      //   this.redirect();
+      // })  
+      // .catch(error => {
+      //   this.setState({ saving: false });
+      //   toastr.error(error);
+      // });
   }
 
   redirect() {

@@ -106,8 +106,10 @@ export function saveCustomer(customer) {
 
                 
               }).then(res => {
-                console.log(JSON.stringify(res.data) + 'Response Data');
-                return dispatch(createcustomerSuccess(JSON.stringify(res.data)));
+                let newData = res.data;
+                console.log(newData);
+                 dispatch(createcustomerSuccess(newData));
+                 return newData;
               }).catch(err => {
                 console.log("Error with the Api request");
               });

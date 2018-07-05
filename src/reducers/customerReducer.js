@@ -8,6 +8,7 @@ export default function customerReducer(state = initialState.customers, action) 
       return action.customers.sort((customer1, customer2) => customer1.cuName.localeCompare(customer2.cuName));
       console.log(customer1.cuName+'----');
     case actions.CREATE_CUSTOMER_SUCCESS:
+     console.log([...state, Object.assign({}, action.customer)]);
       return [
         ...state,
         Object.assign({}, action.customer)

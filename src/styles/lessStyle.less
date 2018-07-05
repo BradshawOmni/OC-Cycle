@@ -52,9 +52,10 @@ body{
 }
 
 //App Sections (Header, Nav, Main Aside)
+
 .app-header
 {
-  position:relative !important;
+  position:fixed !important;
 }
 .app-body
 {
@@ -80,13 +81,20 @@ body{
   padding:20px;
   width:100%;
 }
+.sidebar-lg-show.sidebar-fixed .main
+{
+  margin-left:200px !important;
+}
 .sidebar
 {
-position:relative !important;
+  position:fixed;
+  z-index:1019;
+  width:200px;
+  height:100vh !important;
 }
 .sidebar-minimizer
 {
-  bottom:30vh !important;
+
 }
 .sidebar-minimizer::before
 {
@@ -100,12 +108,17 @@ position:relative !important;
   position:relative;
   text-align:right;
 }
-.navMinToggle
+.sidebar .sidebar-minimizer
 {
   width:100%;
-  background-color:@oc-purp;
+  height:50px !important;
+  background-color:@oc-purp !important;
   border:1px solid @oc-purp;
   color:@oc-white !important;
+  flex:0 0 50px;
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
   -webkit-transition: all .3s; /* Safari */
   transition: all .3s;
 }

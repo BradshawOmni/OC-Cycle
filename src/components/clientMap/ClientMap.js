@@ -67,7 +67,7 @@ export class ClientMap extends React.Component {
       <Marker
           icon={iconMarker}
           scale={.5}
-          key = {customer.customerId}
+          key = {customer._id}
           title={customer.cuName}
           name={customer.cuName}
           onClick = { this.onMarkerClick }

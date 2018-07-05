@@ -17,7 +17,7 @@ class CustomerList extends Component {
         </div>
         <div className="list-group">
         {customers.map(customer =>
-          <CustomerListRow key={customer.customerId} customer={customer} />
+          <CustomerListRow key={customer._id} customer={customer} />
           )}
         </div>
       </div>

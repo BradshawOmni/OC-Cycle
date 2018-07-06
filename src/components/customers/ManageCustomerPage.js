@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as customerActions from '../../actions/customerActions';
 import CustomerForm from './CustomerForm';
+import  geocode from '../../config/config';
+import axios from 'axios';
 import toastr from 'toastr';
 import moment from 'moment';
 
@@ -62,11 +64,37 @@ class ManageCustomerPage extends React.Component {
       return;
     }
     let customer = this.state.customer;
-    customer = JSON.stringify(customer);
-    this.setState({ saving: true });
+    console.log(customer);
+
+    if(customer._id) {
+      this.setState({ saving: true });
+       this.props.actions.updateCustomer(customer);
+       this.redirect('/customers');
+    } else {
+      this.setState({ saving: true });
+
+      axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${customer.cuStreet},${customer.cuCity},${customer.cuState}&key=${geocode.apiKey}`)
+            .then(response => {
+              return response.data.results[0].geometry.location;
+            })
+            .then(location => {
+              customer.cuLat = location.lat;
+              customer.cuLong = location.lng;
+              console.log(customer);
+              
+            })
+            .then(() => {
+              this.props.actions.saveCustomer(customer);
+              this.redirect('/customers');
+            })
+            .catch(err => console.log(err));
+            
+
+
    
-    this.props.actions.saveCustomer(customer);
-    this.redirect('/customers');
+    }
+   
+    
       // .then((data) => 
       // {
       //   console.log('Redirecting');
@@ -131,7 +159,7 @@ function mapStateToProps(state, ownProps) {
     contractSignedDate: '1900-01-01T00:00:00',
     servicesProposed: '',
     servicesSold: '',
-    beenServed: '',
+    beenServed: false,
     websitesClientLikes: '',
     interestingLinks: ''
    
@@ -140,8 +168,8 @@ if (customerId && state.customers.length > 0) {
    customer = getCustomerById(state.customers, customerId);
 }
 const beenServed = [
-  {value: 'true', text: 'True'},
-  {value: 'false', text: 'False'}
+  {value: true, text: 'True'},
+  {value: false, text: 'False'}
 ];
   return {
     customer: customer,  

@@ -54,41 +54,56 @@ router.delete('/:id', (req, res) => {
       });
 });
 
+router.put('/:id', (req, res) => {
 
-//route to post customer data
-router.post('/',  (req, res) => {
-
-    const {customerId, customerTypeId, cuName, cuStreet, cuCity, cuState, cuZip, cuLat, cuLong, contactName, contactEmail, contactNumber, walkThroughDate, servicesProposed, servicesSold, beenServed, websitesClientLikes, interestingClientFacts} = JSON.parse(req.body.data);
+    const { customerTypeId, cuName, cuStreet, cuCity, cuState, cuZip, cuLat, cuLong, contactName, contactEmail, contactNumber, walkThroughDate, servicesProposed, servicesSold, beenServed, websitesClientLikes, interestingClientFacts} = req.body.data;
     // var Model = JSON.parse(req.body.data);
     // // Object.assign(Model, req.body)
     // console.log(Model);
 
-    let newCustomer = {
-        customerTypeId,
-        cuName,
-        cuStreet,
-        cuCity,
-        cuState,
-        cuZip,
-        cuLat,
-        cuLong,
-        contactName,
-        contactEmail,
-        contactNumber,
-        walkThroughDate,
-        servicesProposed,
-        servicesSold,
-        beenServed,
-        websitesClientLikes,
-        interestingClientFacts
-    }
-    console.log(newCustomer);
+
+    let newCustomer = req.body.data;
+
+    Customer.findByIdAndUpdate(req.params.id, newCustomer,  {new: true}, function(err, model) {
+        if(err) {
+            console.log(err);
+        } else {        
+           res.json(model);
+        }
+        
+      });
+});
+
+
+//route to post customer data
+router.post('/',  (req, res) => {    
+
+    let newCustomer = req.body.data;
+
         new Customer(newCustomer).save()
-                    .then(customer => {
-                        res.json(customer);
-                    }).catch(err => {
-                        console.log(err);
-                    });
+        .then(customer => {
+            res.json(customer);
+        }).catch(err => {
+            console.log(err);
+        });
+        
+});
+
+
+//route to uypdate customer data
+router.put('/',  (req, res) => {
+
+        const updatedCustomer = req.body.data;
+
+
+        Customer.findByIdAndUpdate(updatedCustomer._id, updatedCustomer,  {new: true}, function(err, model) {
+        if(err) {
+            console.log(err);
+        } else {        
+           res.json(model);
+        }
+        
+      });
 });
 
 module.exports = router;

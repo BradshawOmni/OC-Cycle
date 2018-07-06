@@ -4,6 +4,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
+const cors = require('cors');
 const mongoose = require('mongoose');
 const passport = require('passport');
 
@@ -38,6 +39,14 @@ mongoose.connect(mongodbUri)
 });
 
 let connection = mongoose.connection;
+
+//Cors middleware
+const corsOptions = {
+    origin: 'http://localhost:8080',
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+  };
+
+  app.use(cors(corsOptions));
 
 app.use(morgan('dev'));
 

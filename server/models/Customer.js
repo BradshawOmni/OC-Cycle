@@ -23,11 +23,11 @@ const mongoose = require('mongoose');
         default: ""
     },
     cuLat: {
-        type: String,
+        type: Number,
         default: ""
     },
     cuLong: {
-        type: String,
+        type: Number,
         default: ""
     },
     contactName: {

@@ -106,8 +106,10 @@ export function saveCustomer(customer) {
 
                 
               }).then(res => {
-                console.log(JSON.stringify(res.data) + 'Response Data');
-                return dispatch(createcustomerSuccess(JSON.stringify(res.data)));
+                let newData = res.data;
+                console.log(newData);
+                 dispatch(createcustomerSuccess(newData));
+                 return newData;
               }).catch(err => {
                 console.log("Error with the Api request");
               });
@@ -120,8 +122,52 @@ export function saveCustomer(customer) {
     } catch (error) {
       console.log(customer.customerId + '---- ID');
       dispatch(ajaxCallError(error));
-      return customer.customerId ? dispatch(updateCustomerFailed(error.message)) :
-        dispatch(createCustomerFailed(error.message));
+      return customer.customerId ? dispatch(createcustomerfailed(error.message)) :
+        dispatch(createcustomerfailed(error.message));
+    }
+  };
+}
+
+
+export function updateCustomer(customer) {
+ 
+  return function (dispatch, getState) {
+    
+    dispatch(beginAjaxCall());
+   
+    try {
+        axios.put('http://localhost:3000/customers/', {
+          method: 'PUT',
+          data: customer,
+          headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Methods' : '*'
+          },
+          mode: 'cors'
+          }).then(response => {                 
+
+                return response
+
+                
+              }).then(res => {
+                let newData = res.data;
+                console.log(newData);
+                 dispatch(updatecustomersuccess(newData));
+                 return newData;
+              }).catch(err => {
+                console.log("Error with the Api request");
+              });
+      // console.log(customer.customerId + '---- ID');
+      //   return customerApi.saveCustomer(customer).then(savedCustomer => {
+      //   customer.customerId ? dispatch(updatecustomersuccess(savedCustomer)) :
+      //   dispatch(createcustomerSuccess(savedCustomer));
+          
+      // });
+    } catch (error) {
+      console.log(customer.customerId + '---- ID');
+      dispatch(ajaxCallError(error));
+      return customer.customerId ? dispatch(updatecustomerfailed(error.message)) :
+        dispatch(updatecustomerfailed(error.message));
     }
   };
 }

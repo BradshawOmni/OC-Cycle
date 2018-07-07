@@ -14,9 +14,9 @@ class ToggleNavMinimizeButton extends Component {
     const toggleMenu = this.props.toggleMenu;
     return (
       <div className = 'ToggleNavMinimizeButton'>
-        <button className="navMinToggle"
+        <button className="navMinToggle sidebar-minimizer brand-minimizer"
           onClick={toggleMenu}>
-            <i className="fas fa-angle-double-left"></i>  
+            
         </button>
       </div>
     );

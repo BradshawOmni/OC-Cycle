@@ -9,6 +9,7 @@ import invoices from './invoicesReducer';
 import ajaxCallsInProgress from './ajaxStatusReducer';
 import persons from './personReducer';
 import customers from './customerReducer';
+import auth from './authReducer';
 
 const rootReducer = combineReducers({
   students,
@@ -20,7 +21,8 @@ const rootReducer = combineReducers({
   addressTypes,
   persons,
   customers,
-  ajaxCallsInProgress
+  ajaxCallsInProgress,
+  auth
 });
 
 export default rootReducer;

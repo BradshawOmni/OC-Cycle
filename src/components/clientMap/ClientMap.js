@@ -41,8 +41,6 @@ export class ClientMap extends React.Component {
       });
     }
   }
-
-
   render() {
     const { customers } = this.props;
     Geocode.fromAddress("Eiffel Tower").then(
@@ -56,7 +54,6 @@ export class ClientMap extends React.Component {
     );
     return (
     // Get latidude & longitude from address.
-
     //Load Map
     <Map google={this.props.google} 
       zoom={5}

@@ -19,8 +19,6 @@ class Navigation extends Component {
     //const textCollapse = this.props.textCollapse;
     //console.log(textCollapse);
     this.state.textCollapse === "nav-link openNavText" ? this.setState({textCollapse: "nav-link collapseNavText navIconOnly"}) : this.setState({textCollapse: "nav-link openNavText"});
-      
-    console.log(this.state.textCollapse);
   }
   render() {
     const loading = this.props.loading;
@@ -29,6 +27,9 @@ class Navigation extends Component {
       <div className="sidebar">
         <nav className="sidebar-nav">
           <ul className="nav">
+            <li className="nav-item">
+              <IndexLink to="/login" className={this.state.textCollapse}><i className="fas fa-home fa-2x navIcon"></i> <span className = "navSpan">Login Screen</span> </IndexLink>
+            </li>
             <li className="nav-item">
               <IndexLink to="/" className={this.state.textCollapse}><i className="fas fa-home fa-2x navIcon"></i> <span className = "navSpan">Home</span> </IndexLink>
             </li>

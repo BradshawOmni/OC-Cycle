@@ -4,6 +4,7 @@ import { browserHistory } from 'react-router';
 import TextInput from '../common/TextInput';
 import TextArea from '../common/TextArea';
 import SelectInput from '../common/SelectInput';
+import ProductSelect from '../common/CheckBox';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -185,14 +186,16 @@ class CustomerForm extends Component {
           </div>
           <div className="row">
             <div className="col-lg-12">
-              <TextArea
-                name="servicesProposed"
-                label="Services Proposed"
-                placeholder="Services Proposed"
-                value={customer.servicesProposed}
-                onChange={onChange}
-                addClass="medium-textbox"
-                error='' />
+           
+            
+            <ProductSelect 
+               name="cuName"
+               label="Credit Union"
+               placeholder="Enter Credit Union Name"
+               
+               onChange={onChange}
+               addClass="medium-textbox"
+               error='' />
             </div>
           </div>
           <div className="row">

@@ -3,7 +3,7 @@ const router = require('express-promise-router')();
 const {ensureAuthenticated} = require('../helpers/auth');
 const mongoose = require('mongoose');
 
-//load user mmodel
+//load user model
 const User = mongoose.model('users');
 
 router.get('/', ensureAuthenticated, (req, res) => {
@@ -29,8 +29,18 @@ router.get('/all', ensureAuthenticated, (req, res) => {
 });
 
 router.get('/update-role', ensureAuthenticated,  (req, res) => {
-        if(req.user.role === '') {
-            res.send('you are not an admin');
+        if(req.profile.role === 'admin') {
+            const userToUpdate = req.body.data;
+            User.findByIdAndUpdate(userToUpdate._id, {role: userToUpdate.role}, (err, model) => {
+                    if(err) {
+                        console.log(err);
+                    } else {
+                        res.json({
+                            success: true,
+                            user: model
+                        });
+                    }
+            });
         }
 });
 

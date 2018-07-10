@@ -43,6 +43,7 @@ export class ClientMap extends React.Component {
   }
   render() {
     const { customers } = this.props;
+    const mapStyle = require("./mapStyle.json");
     Geocode.fromAddress("Eiffel Tower").then(
       response => {
         const { lat, lng } = response.results[0].geometry.location;
@@ -56,9 +57,12 @@ export class ClientMap extends React.Component {
     // Get latidude & longitude from address.
     //Load Map
     <Map google={this.props.google} 
+      
       zoom={5}
       onClick={this.onMapClicked}
+      
       mapType='HYBRID'
+      defaultOptions={{ styles: mapStyle }}
       initialCenter={{lat:41.850033,lng: -87.6500523}}>  
       {customers.map(customer =>
       <Marker

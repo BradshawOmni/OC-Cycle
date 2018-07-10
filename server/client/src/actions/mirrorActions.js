@@ -62,7 +62,6 @@ const action = keyMirror({
   UPDATE_PERSON_SUCCESS: null,
   UPDATE_PERSON_FAILED: null,
   CREATE_PERSON_FAILED: null,
-  UPDATE_PERSON_FAILED: null,
   DELETE_PERSON_SUCCESS: null,
   DELETE_PERSON_FAILED: null,
 

@@ -61,7 +61,7 @@ export function loadcustomers() {
     dispatch(beginAjaxCall());
 
     try {
-      axios.get('http://localhost:3001/customers', {
+      axios.get('/customers', {
           headers: {
             'Content-Type': 'application/json'
           }
@@ -91,7 +91,7 @@ export function saveCustomer(customer) {
     dispatch(beginAjaxCall());
    
     try {
-        axios.post('http://localhost:3001/customers', {
+        axios.post('/customers', {
           method: 'POST',
           data: customer,
           headers: {
@@ -136,7 +136,7 @@ export function updateCustomer(customer) {
     dispatch(beginAjaxCall());
    
     try {
-        axios.put('http://localhost:3001/customers/', {
+        axios.put('/customers/', {
           method: 'PUT',
           data: customer,
           headers: {

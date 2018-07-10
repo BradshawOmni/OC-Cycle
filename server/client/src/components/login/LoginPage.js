@@ -63,7 +63,7 @@ class LoginPage extends React.Component {
                     </div>
                     <div className="col-12 text-center">
                       <button type="button" className="btn btn-link px-0">Need Help Logging In?</button>
-                      <a href="http://localhost:3000/auth/google" ><button>Login with google</button></a>
+                      <a href="/auth/google" ><button>Login with google</button></a>
                     </div>
                     {
                       this.state.errors === "" ? null : `<div> ${this.state.errors}</div>`

@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 
 //imports
-const port =  3000;
+const port =  process.env.PORT || 3001;
 const db = require('./config/config').db;
 const sessionsSecret = require('./config/sessionConfig').secret;
 
@@ -42,11 +42,17 @@ let connection = mongoose.connection;
 
 //Cors middleware
 const corsOptions = {
-    origin: 'http://localhost:8080',
+    origin: '*',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
   };
 
   app.use(cors(corsOptions));
+
+  app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
 
 app.use(morgan('dev'));
 
@@ -97,7 +103,7 @@ app.use('/customers', customers);
 
 
 app.listen(port, () => {
-     console.log('Example app listening on port 3000!');
+     console.log('Example app listening on port 3001!');
      console.log(db.username);
      
 });

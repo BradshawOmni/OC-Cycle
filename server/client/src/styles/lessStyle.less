@@ -1,0 +1,366 @@
+/* OmniCommander Style Colors */
+@oc-purp: #662C90;
+@oc-lightBlue: #B8CBD6;
+@oc-yellow: #FF8A0D;
+@oc-orange: #E8450C;
+
+/*Interface Colors*/
+@oc-lightgrey: #efefef;
+@oc-medgrey: #BDEDFF;
+@oc-white:#fdfdfd;
+
+/*Core Colors */
+body{
+  background:#ccc;
+}
+
+/*Interface Icons */
+.fa-bars
+{
+  color:@oc-purp;
+}
+
+/*Login Page */
+.loginPage
+{
+  height:94vh !important;
+}
+.loginBoxPurp
+{
+  background-color:#662C90 !important;
+}
+.justify-content-center
+{
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  height:100vh !important;
+}
+/* Header */
+.pageHeaders{
+  width:100%;
+ 
+  margin-top:20px;
+  margin-left:20px;
+  border-bottom:1px dotted @oc-medgrey;
+}
+.saveButtons
+{
+  display:flex;
+  
+}
+.pageHeaders h2{
+  color:@oc-purp;
+}
+.navbar
+{
+  position:relative !important;
+}
+.navbar-brand
+{
+
+  color:@oc-purp;
+  -webkit-transition: all .3s; /* Safari */
+  transition: all .3s;
+}
+.navbar-brand:hover
+{
+  color:@oc-orange;
+}
+
+/*App Sections (Header, Nav, Main Aside) */
+
+.app-header
+{
+  position:fixed !important;
+  width:100%;
+  
+}
+.app-body
+{
+  margin-top:0px !important;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+.main
+{
+  
+  background-color:#efefef;
+  height:100% !important;
+  overflow:hidden;
+  margin-top:55px;
+  margin-left:0px !important;
+  margin-right:10px !important;
+}
+.omniComp
+{
+  margin:20px !important;
+  border-radius:10px;
+  background-color:#ffffff;
+  padding:20px;
+  width:100%;
+}
+.sidebar-lg-show.sidebar-fixed .main
+{
+  
+  margin-left:200px !important;
+}
+.sidebar
+{
+  position:fixed;
+  z-index:1019;
+  width:200px;
+  margin-top:55px !important;
+  height:95vh !important;
+}
+.sidebar-minimizer
+{
+
+}
+.sidebar-minimizer::before
+{
+  top:30vh;
+  right:20vw;
+}
+
+/*/*Side Nav */
+.toggleNavButton
+{
+  position:relative;
+  text-align:right;
+}
+.sidebar .sidebar-minimizer
+{
+  width:100%;
+  height:50px !important;
+  background-color:@oc-purp !important;
+  border:1px solid @oc-purp;
+  color:@oc-white !important;
+  flex:0 0 50px;
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  -webkit-transition: all .3s; /* Safari */
+  transition: all .3s;
+}
+.sidebar
+{
+  background-color:@oc-white !important;
+  border-right:1px solid @oc-purp;
+  -webkit-transition: all .3s; /* Safari */
+  transition: all .3s;
+}
+.sidebar-nav
+{
+  
+  overflow-y:hidden !important;
+  background-color:@oc-white !important;
+}
+.sidebar .nav-link
+{
+  display: block;
+  padding: .75rem 1rem;
+  color: #fff;
+  text-decoration: none;
+  background: 0 0;
+  margin-left:auto;
+  margin-right:auto;
+}
+.nav-item a
+{
+  background-color:@oc-white;
+  border-bottom:1px solid @oc-purp;
+  color:@oc-purp !important;
+  -webkit-transition: all .3s; /* Safari */
+  transition: all .3s;
+}
+.nav-item a:hover
+{
+  background-color:@oc-purp !important;
+  color:@oc-white !important;
+
+}
+.nav-item a:hover i
+{
+  background-color:@oc-purp !important;
+  color:@oc-white !important;
+  
+}
+.openNavText
+{
+  
+  -webkit-transition: all .3s; /* Safari */
+  transition: all .3s;
+}
+.collapseNavText .navSpan
+{
+  font-size:0px !important;
+
+}
+.collapseNavText .navSpan 
+{
+  display:none;
+  visibility:collapse;
+
+}
+.collapseNavText .fa { 
+  font-size: 30px; 
+}
+.navIconOnly 
+{
+  margin-right:auto !important;
+  margin-left:auto !important;
+  text-align:center !important;
+}
+  
+/*Forms */
+
+select
+{
+  margin-bottom:20px !important;
+}
+.form-group label
+{
+  color:@oc-purp !important;
+  font-weight:bold !important;
+}
+label
+{
+  color:@oc-purp !important;
+  font-weight:bold !important;
+}
+.formSeperator
+{
+  border-bottom:1px solid @oc-purp !important;
+}
+.btnPosition
+{
+  margin-right:30px !important;
+}
+/*Page Items
+Home Page */
+.blueBox
+{
+  background-color:@oc-purp !important;
+}
+.greenBox
+{
+  background-color:@oc-lightBlue !important;
+}
+.pinkBox
+{
+  background-color:@oc-yellow !important;
+}
+.orangeBox
+{
+  background-color:@oc-orange !important;
+}
+
+.OmniCommanderBtn
+{
+  background-color: @oc-purp !important;
+  color:#fff !important;
+  border:1px solid @oc-purp;
+  -webkit-transition: all .3s; /* Safari */
+  transition: all .3s;
+}
+.OmniCommanderBtn:hover
+{
+  background-color: @oc-white !important;
+  color: @oc-purp !important;
+  border:1px solid @oc-purp;
+}
+
+.list-group-item:nth-child(even) {
+  background-color: @oc-medgrey;
+  border:1px solid @oc-medgrey;
+}
+.list-group-item:nth-child(odd) {
+  background-color: nc-lightgrey;
+  border:1px solid @oc-medgrey;
+} 
+/*Tables */
+.tableHeader
+{
+    display:flex;
+    width:100%;
+    margin-bottom:10px;
+    font-weight:bold;
+}
+.item-detail {
+ 
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 1em;
+}
+.number-detail {
+  text-align: right;
+}
+/*Invoice Items */
+.total-line {
+  font-weight: bold;
+  background-color:@oc-medgrey;
+  color:@oc-purp !important;
+}
+.item-detail
+{
+  
+}
+.row-detail {
+  border-bottom:1px solid @oc-purp; 
+  /* background-color: #CCC; */
+}
+.invoiceTitle
+{
+  margin-bottom:40px;
+}
+/*Charts */
+.chart-wrapper
+{
+  max-height:70px !important;
+}
+.chart
+{
+  max-height:70px !important;
+}
+
+/*Date Picker */
+.react-datepicker__header, .react-datepicker__day--selected
+{
+  background-color:@oc-purp !important;
+  
+} 
+.react-datepicker__current-month, .react-datepicker__day-name
+{
+  color:#ffffff !important;
+}
+
+
+
+/*In Production List*/
+.prodListContainer
+{
+  padding:40px;
+  border-bottom:1px solid @oc-medgrey;
+  color:@oc-white;
+  background-color:@oc-purp;
+}
+
+
+.flexMap
+{
+  margin:10px;
+  display:flex;
+  height:86vh;
+  overflow:hidden !important;
+}
+.mapStyle
+{
+  height:100% !important;
+}
+.mapInfoWindow
+{
+  background-color:@oc-purp;
+  color:@oc-white;
+}

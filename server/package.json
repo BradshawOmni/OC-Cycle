@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"nodemon server.js\" \"cd ../ && npm start -s\""
+    "start": "concurrently \"nodemon server.js\" \"cd ./client && npm start \""
   },
   "keywords": [
     "\"Omnicommander\""
@@ -24,7 +24,8 @@
     "jsonwebtoken": "^8.3.0",
     "mongoose": "^5.1.6",
     "passport": "^0.4.0",
-    "passport-google-oauth20": "^1.0.0"
+    "passport-google-oauth20": "^1.0.0",
+    "react-google-maps": "^9.4.5"
   },
   "devDependencies": {
     "morgan": "^1.9.0"

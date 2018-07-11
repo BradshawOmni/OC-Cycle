@@ -7,19 +7,13 @@ import axios from 'axios';
 import { browserHistory } from 'react-router';
 
 class LoginPage extends React.Component {
-    
   constructor(props, context) {
-
     super(props, context);
-
     this.state = {
         errors: ""
     }
-
     this.login = this.login.bind(this);
-    
   }
-
   login() {
     this.setState({
       errors: ""
@@ -42,15 +36,11 @@ class LoginPage extends React.Component {
                   }
                 });
   }
-  
-
   render() {
-
     return (
       <div className="container loginPage">
         <div className="row justify-content-center">
           <div className="col-md-8">
-          <div class="blur"></div>
             <div className="card-group">
               <div className="card p-4">
                 <div className="card-body text-center">
@@ -60,11 +50,10 @@ class LoginPage extends React.Component {
                   <p className="text-muted">Sign In to your account</p>
                   <div className="row text-center">
                     <div className="col-12 text-center">
-                      <button type="button" className="btn px-4 OmniCommanderBtn" onClick={ this.login }><i className="fab fa-google"></i> Login</button>
+                    <a href="/auth/google" ><button type="button" className="btn px-4 OmniCommanderBtn" onClick={ this.login }><i className="fab fa-google"></i> Login</button></a>
                     </div>
                     <div className="col-12 text-center">
                       <button type="button" className="btn btn-link px-0">Need Help Logging In?</button>
-                      <a href="http://localhost:3000/auth/google" ><button>Login with google</button></a>
                     </div>
                     {
                       this.state.errors === "" ? null : `<div> ${this.state.errors}</div>`

@@ -11,8 +11,7 @@ class App extends React.Component {
   render() {
     
     return (
-      <div>
-              
+      <div>     
           <Header loading={this.props.loading} />
           <div className = "app-body">
             <Navigation loading={this.props.loading} textCollapse={this.props.textCollapse} />

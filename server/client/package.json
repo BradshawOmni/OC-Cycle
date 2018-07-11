@@ -2,13 +2,13 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy" : {
-    "/auth/google" : {
+  "proxy": {
+    "/auth/google": {
       "target": "http://localhost:3001"
     },
-      "/customers" : {
-        "target": "http://localhost:3001"
-      }
+    "/customers": {
+      "target": "http://localhost:3001"
+    }
   },
   "dependencies": {
     "@coreui/coreui": "^2.0.3",
@@ -116,6 +116,7 @@
     "npm-run-all": "^1.8.0",
     "open": "~0.0.5",
     "react-addons-test-utils": "~15.0.2",
+    "react-hot-loader": "^4.0.0",
     "redux-immutable-state-invariant": "^1.2.4",
     "redux-mock-store": "~1.0.2",
     "rimraf": "~2.5.2",
@@ -180,7 +181,10 @@
   "babel": {
     "presets": [
       "react-app"
-    ]
+    ],
+    "plugins": [
+      "react-hot-loader/babel"
+  ]
   },
   "eslintConfig": {
     "extends": "react-app"

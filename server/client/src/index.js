@@ -14,6 +14,7 @@ import { loadStates } from './actions/stateActions';
 import { loadAddresses } from './actions/addressActions';
 import {loadAddressTypes} from './actions/addressTypeActions';
 import {loadPersons} from './actions/personActions';
+import {AppContainer} from 'react-hot-loader';
 import {loadcustomers} from './actions/customerActions';
 import './styles/lessStyle.less';
 import './styles/map.less';
@@ -37,9 +38,11 @@ store.dispatch(loadcustomers());
 
 /* jshint ignore:start */
 render(
+  <AppContainer>
   <Provider store={store}>
     <Router history={browserHistory} routes={routes} />
-  </Provider>,
+  </Provider>
+  </AppContainer>,
   document.getElementById('root')
 );
 registerServiceWorker();

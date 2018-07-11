@@ -19,7 +19,7 @@ router.get('/',  (req, res) => {
             //     customerMap[customer._id] = customer;
             // });
         
-            res.send(customers);  
+            return res.json(customers);  
         }
         
       });
@@ -32,7 +32,7 @@ router.get('/:id', (req, res) => {
         if(err) {
             console.log(err);
         } else {        
-            res.send(customer);  
+            return res.json(customer);  
         }
         
       });
@@ -45,7 +45,7 @@ router.delete('/:id', (req, res) => {
         if(err) {
             console.log(err);
         } else {        
-           res.json({
+           return res.json({
                success: true,
                message: "customer deleted"
            });
@@ -68,7 +68,7 @@ router.put('/:id', (req, res) => {
         if(err) {
             console.log(err);
         } else {        
-           res.json(model);
+           return res.json(model);
         }
         
       });
@@ -82,7 +82,7 @@ router.post('/',  (req, res) => {
 
         new Customer(newCustomer).save()
         .then(customer => {
-            res.json(customer);
+            return res.json(customer);
         }).catch(err => {
             console.log(err);
         });

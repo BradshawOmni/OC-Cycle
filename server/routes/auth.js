@@ -22,10 +22,11 @@ router.get('/google/callback',
     res.cookie("t", token, {
       expire: new Date() + 9999
     });
-    res.json({
-      token,
-      data: req.user
-    });
+    // return res.json({
+    //   token,
+    //   data: req.user
+    // });
+    res.redirect("/");
   });
 
   // router.get('/verify', (req, res) => {

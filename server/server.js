@@ -97,9 +97,9 @@ app.get('/dashboard', (req, res) => {
 
 app.use('/auth', auth);
 
-app.use('/users', users);
+app.use('/api/users', users);
 
-app.use('/customers', customers);
+app.use('/api/customers', customers);
 
 
 app.listen(port, () => {

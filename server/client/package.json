@@ -6,7 +6,7 @@
     "/auth/google": {
       "target": "http://localhost:3001"
     },
-    "/customers": {
+    "/api/customers": {
       "target": "http://localhost:3001"
     }
   },

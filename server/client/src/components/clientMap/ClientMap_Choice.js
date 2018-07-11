@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import { GoogleMap, Marker } from "react-google-maps"
 import Geocode from 'react-geocode';
 import iconMarker from '../../img/omniAnit.svg';
 
 
 
  
-export class ClientMap extends React.Component {
+export class ClientMap_Choice extends React.Component {
 
   constructor(props, context) {
     super(props, context);

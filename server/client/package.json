@@ -8,6 +8,9 @@
     },
     "/api/customers": {
       "target": "http://localhost:3001"
+    },
+    "/api/users": {
+      "target": "http://localhost:3001"
     }
   },
   "dependencies": {

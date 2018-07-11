@@ -10,6 +10,8 @@ import ajaxCallsInProgress from './ajaxStatusReducer';
 import persons from './personReducer';
 import customers from './customerReducer';
 import auth from './authReducer';
+import users from './userReducer';
+
 
 const rootReducer = combineReducers({
   students,
@@ -21,6 +23,7 @@ const rootReducer = combineReducers({
   addressTypes,
   persons,
   customers,
+  users,
   ajaxCallsInProgress,
   auth
 });

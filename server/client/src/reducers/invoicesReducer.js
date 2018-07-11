@@ -1,6 +1,6 @@
 import actions from '../actions/mirrorActions';
 import * as types from '../actions/actionTypes';
-import initialState from './initailState';
+import initialState from './initialState';
 
 export default function invoiceReducer(state = initialState.invoices, action) {
   switch (action.type) {

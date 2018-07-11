@@ -1,5 +1,5 @@
 import actions from '../actions/mirrorActions';
-import initialState from './initailState';
+import initialState from './initialState';
 
 export default function stateReducer(state = initialState.states, action) {
   switch (action.type) {

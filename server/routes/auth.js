@@ -11,7 +11,7 @@ router.get('/google', passport.authenticate('google', {
 }));
 
 router.get('/google/callback', 
-  passport.authenticate('google', { failureRedirect: '/loginError' }),
+  passport.authenticate('google', { failureRedirect: '/login' }),
     (req, res) => {
     // Successful authentication, redirect home.
 
@@ -29,34 +29,32 @@ router.get('/google/callback',
     res.redirect("/");
   });
 
-  // router.get('/verify', (req, res) => {
-  //   if(req.user) {
+  router.get('/verify', (req, res) => {
+    if(req.user) {
 
-  //     const token = jwt.sign({
-  //       _id: req.user._id
-  //     }, secret.jwtSecret);
+      const token = jwt.sign({
+        _id: req.user._id
+      }, secret.jwtSecret.secret);
 
-  //     res.cookie("t", token, {
-  //       expire: new Date() + 9999
-  //     });
-  //     res.json({
-  //       token,
-  //       data: req.user
-  //     });
-  //   } else {
-  //     res.json({
-  //       success: false,
-  //       message: "not authenticated"
-  //     });
-  //   }
-  // });
+      res.cookie("t", token, {
+        expire: new Date() + 9999
+      });
+      res.json({
+        token,
+        data: req.user
+      });
+    } else {
+      res.json({
+        success: false,
+        message: "not authenticated"
+      });
+    }
+  });
 
   router.get('/logout', (req, res) => {
     res.clearCookie("t");
     req.logout();
-      res.json({
-        message: "signed out"
-      });
+      res.redirect("/login");
   });
 
 

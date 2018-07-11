@@ -1,5 +1,5 @@
 import actions from '../actions/mirrorActions';
-import initialState from './initailState';
+import initialState from './initialState';
 
 export default function customerReducer(state = initialState.customers, action) {
   console.log(action.type+'---->');

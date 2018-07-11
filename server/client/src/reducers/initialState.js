@@ -8,5 +8,6 @@ export default {
   invoices: [],
   persons: [],
   customers: [],
+  users: [],
   ajaxCallsInProgress: 0
 };

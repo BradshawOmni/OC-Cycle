@@ -1,5 +1,5 @@
 import actions from '../actions/mirrorActions';
-import initialState from './initailState';
+import initialState from './initialState';
 
 function actionTypeEndsInSuccess(type) {
   return type.substring(type.length - 8) == '_SUCCESS';

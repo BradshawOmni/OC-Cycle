@@ -28,7 +28,7 @@ router.get('/all', ensureAuthenticated, (req, res) => {
       });
 });
 
-router.get('/update-role', ensureAuthenticated,  (req, res) => {
+router.put('/update-role', ensureAuthenticated,  (req, res) => {
         if(req.profile.role === 'admin') {
             const userToUpdate = req.body.data;
             User.findByIdAndUpdate(userToUpdate._id, {role: userToUpdate.role}, (err, model) => {

@@ -8,7 +8,6 @@
     "server": "nodemon server.js",
     "client": "npm run start --prefix client",
     "start": "concurrently \"npm run server\" \"npm run client\""
-    
   },
   "keywords": [
     "\"Omnicommander\""

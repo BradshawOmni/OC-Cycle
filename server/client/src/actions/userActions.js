@@ -1,5 +1,4 @@
 import action from './mirrorActions';
-import userApi from '../api/userApi';
 import { beginAjaxCall, ajaxCallError } from './ajaxStatusActions';
 import axios from 'axios';
 

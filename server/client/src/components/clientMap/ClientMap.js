@@ -48,10 +48,7 @@ export class ClientMap extends React.Component {
   render() {
     const { customers } = this.props;
     const mapStyle = require("./mapStyle.json");
-    const style = {
-      width: '90%',
-      height: '100%'
-    }
+   console.log(this.props.google);
     Geocode.fromAddress("Eiffel Tower").then(
       response => {
         const { lat, lng } = response.results[0].geometry.location;
@@ -65,14 +62,9 @@ export class ClientMap extends React.Component {
       <div id="ui-view">
         <div>
           <div className="animated fadeIn">
-            <div className="card">
-              <div className="card-header">
-                <div className="card-header-actions">
-                  <a className="card-header-action" href="https://google-developers.appspot.com/maps/documentation/javascript/reference" target="_blank"><small className="text-muted">docs</small></a>
-                </div>
-              </div>
-              <div className="card-body">
-                <div className = "flexMap">
+          
+            
+                <div className = "">
                 <Map google={this.props.google} 
                   defaultOptions={{ 
                     style: require('./mapStyle.json'),
@@ -80,7 +72,7 @@ export class ClientMap extends React.Component {
                   zoom={5}
                   onClick={this.onMapClicked}
                   mapType='HYBRID'
-                 
+                  layerTypes={['TrafficLayer', 'TransitLayer']}
                   initialCenter={{lat:41.850033,lng: -87.6500523}}>  
                   {customers.map(customer =>
                   <Marker
@@ -102,7 +94,7 @@ export class ClientMap extends React.Component {
                     visible = { this.state.showingInfoWindow }>
                     <div className = "">
                       <h3>{this.state.selectedPlace.title}</h3>
-                      <div className = "markerCity">{this.state.selectedPlace.cuCity}, {this.state.selectedPlace.cuState}</div>
+                      <div className = "markerCity">{this.state.selectedPlace.cuCity}, {this.state.selectedPlace.cuState} | URL:</div>
                     </div>
                   </InfoWindow>
                 </Map>
@@ -110,8 +102,8 @@ export class ClientMap extends React.Component {
               </div>
             </div>
           </div>
-        </div>
-      </div>
+
+   
     // Get latidude & longitude from address.
     //Load Map
     

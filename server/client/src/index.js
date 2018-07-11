@@ -16,6 +16,7 @@ import {loadAddressTypes} from './actions/addressTypeActions';
 import {loadPersons} from './actions/personActions';
 import {AppContainer} from 'react-hot-loader';
 import {loadcustomers} from './actions/customerActions';
+import {loadusers} from './actions/userActions';
 import './styles/lessStyle.less';
 import './styles/map.less';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
@@ -34,6 +35,7 @@ const store = configureStore();
 // store.dispatch(loadStates());
 // store.dispatch(loadPersons());
 store.dispatch(loadcustomers());
+store.dispatch(loadusers());
 
 
 /* jshint ignore:start */

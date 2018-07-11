@@ -31,6 +31,9 @@ class Navigation extends Component {
               <IndexLink to="/login" className={this.state.textCollapse}><i className="fas fa-home fa-2x navIcon"></i> <span className = "navSpan">Login Screen</span> </IndexLink>
             </li>
             <li className="nav-item">
+              <IndexLink to="/logininit" className={this.state.textCollapse}><i className="fas fa-home fa-2x navIcon"></i> <span className = "navSpan">Login Initial</span> </IndexLink>
+            </li>
+            <li className="nav-item">
               <IndexLink to="/" className={this.state.textCollapse}><i className="fas fa-home fa-2x navIcon"></i> <span className = "navSpan">Home</span> </IndexLink>
             </li>
             <li className="nav-item">

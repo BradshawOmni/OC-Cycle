@@ -5,6 +5,7 @@ import axios from 'axios';
 //Types
 const LOAD_USERS_SUCCESS = "LOAD_USERS_SUCCESS",
       LOAD_USERS_FAILED = "LOAD_USERS_FAILED",
+      LOAD_USER = "LOAD_USER",
       UPDATE_USER_SUCCESS = "UPDATE_USER_SUCCESS",
       UPDATE_USER_FAILED = "UPDATE_USER_FAILED";
 
@@ -19,6 +20,14 @@ export function loadusersFailed(message) {
   return {
     type: action.LOAD_USERS_FAILED,
     message
+  };
+}
+
+export function loaduser(users, userId) {
+  return {
+    type: action.LOAD_USER,
+    users,
+    userId
   };
 }
 

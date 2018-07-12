@@ -15,9 +15,14 @@ class RolesInit extends React.Component {
     }
     
   }
+  getUser()
+  {
+    const{ users} = this.props;
+   
+  }
   render() {
     const{ users} = this.props;
-    console.log(users);
+    console.log(users + '-----');
     const {customer, beenServed, onSave, onChange, saving, errors} = this.props;
     return (
       <div className="container RolesInit">
@@ -26,12 +31,14 @@ class RolesInit extends React.Component {
             <div className="card-group">
               <div className="card p-4">
                 <div className="card-body text-center">
-                  <div>
+                    <div className="userPhoto">
                    <img className = "responsive-img rounded-circle" src = "https://lh4.googleusercontent.com/-9RX-cbUSWbI/AAAAAAAAAAI/AAAAAAAAACA/ph7wl-BfxrY/photo.jpg" width = "100"/>
-                  </div>
-               
+                    </div>
+                    <div className = "userName">
+                    Eric Bradshaw
+                    </div>
                   <div className="row text-center">
-                    <div className = "col-6 offset-3">
+                    <div className = "col-6 offset-3 deptSelect">
                         <SelectInput
                         name="beenServed"
                         label="Please Select The Department You Will Be Working In"
@@ -42,10 +49,7 @@ class RolesInit extends React.Component {
                     </div>
                     <div className="col-12 text-center">
                     <a href="/auth/google" ><button type="button" className="btn px-4 OmniCommanderBtn" onClick={ '' }>
-                    <i className="fab fa-google"></i> Submit</button></a>
-                    </div>
-                    <div className="col-12 text-center">
-                      <button type="button" className="btn btn-link px-0">Need Help Logging In?</button>
+                     Submit</button></a>
                     </div>
                     {
                       this.state.errors === "" ? null : `<div> ${this.state.errors}</div>`
